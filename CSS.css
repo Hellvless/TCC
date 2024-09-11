@@ -1,0 +1,353 @@
+body {
+    font-family: Arial, sans-serif; /* Define a família de fontes para o corpo do texto */
+    margin: 0; /* Remove todas as margens ao redor do corpo da página */
+    padding: 0; /* Remove todo o preenchimento interno do corpo da página */
+    justify-content: center;
+    align-items: flex;
+}
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  background-color: rgb(16, 8, 8);
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.logo-red {
+  color: #E53935;
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.logo-white {
+  color: rgb(247, 239, 239);
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.nav-items {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  color: rgb(1, 1, 1);
+  margin-right: 20px;
+}
+
+.nav-item i {
+  margin-right: 5px;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.upgrade-button {
+  background-color: #FFEB3B;
+  color: rgb(0, 0, 0);
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.avatar {
+  background-color: #080606;
+  padding: 5px;
+  border-radius: 50%;
+  margin-left: 10px;
+}
+
+.avatar img {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+}
+
+
+
+/* funçao do pesquisar */
+
+
+
+.search-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.search-box input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+}
+
+.search-box button[type="button"] {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.search-box button[type="button"]:hover {
+  background-color: #ccc;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.banner {
+    background-color: rgb(26, 228, 12);
+    width: 100%; /* Definindo a largura como 100% */
+    height: 100px;
+    display: flex; /* Usando flexbox para centralizar */
+    justify-content: center; /* Centralizando horizontalmente */
+    align-items: center; /* Centralizando verticalmente */
+}
+
+
+.banner a {
+    color: #ffffff; /* Cor do texto do link */
+    text-decoration: none; /* Removendo sublinhado do link */
+    font-size: 24px; /* Tamanho da fonte */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.tudotxt {
+    display: flex;
+    align-items: center;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  
+  .text {
+    flex: 1;
+    padding-right: 20px;
+    text-align: justify;
+  }
+  .text p{
+    color:black;
+  }
+  .text a{
+    color: #0000FF;
+  }
+  
+  .slider {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 300px;
+    overflow: hidden;
+   
+  }
+  
+  .slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  
+  }
+  
+  .slide {
+    min-width: 100%;
+    box-sizing: border-box;
+  }
+  
+  img {
+    width: 100%;
+    vertical-align: middle;
+  }
+
+
+
+
+
+
+
+
+
+.sub {
+    text-align: left; /* Alinha o texto à esquerda dentro do elemento .sub */
+    position: relative; /* Define a posição como relativa para posicionar elementos filhos absolutamente em relação a este elemento */
+    padding: 100px; /* Adiciona 100 pixels de preenchimento interno ao redor do conteúdo dentro do elemento .sub */
+    font-size: 50px; /* Define o tamanho da fonte para 50 pixels */
+}
+
+
+.tudonoticia {
+    overflow: hidden; /* Oculta qualquer conteúdo que ultrapasse os limites do elemento .tudonoticia */
+    white-space: nowrap; /* Impede a quebra de linha, fazendo com que o conteúdo continue em uma única linha */
+    position: relative; /* Define a posição como relativa para posicionar elementos filhos absolutamente em relação a este elemento */
+    height: 700px; 
+}
+
+.imgnoticia {
+    display: inline-block; /* Faz com que o elemento .imgnoticia seja tratado como um bloco em linha */
+    height: 500px; /* Define a altura para 100 pixels */
+    width: 550px; /* Define a largura para 550 pixels */
+}
+
+.imgnoticia img {
+    display: inline-block; /* Faz com que as imagens dentro de .imgnoticia sejam tratadas como blocos em linha */
+    max-width: 100%; /* Garante que a largura da imagem não ultrapasse a largura do contêiner .imgnoticia */
+    height: 700px; 
+    margin: 10px; /* Adiciona uma margem de 10 pixels ao redor de cada imagem */
+}
+
+.buttons {
+    position: absolute; /* Posiciona os botões de forma absoluta em relação ao elemento pai com posição relativa */
+    bottom: 10px; /* Alinha os botões ao fundo do elemento pai com 10 pixels de distância */
+    right: 10px; /* Alinha os botões à direita do elemento pai com 10 pixels de distância */
+}
+
+.scroll-btn {
+    background-color: transparent; /* Define a cor de fundo dos botões como transparente */
+    border: none; /* Remove a borda dos botões */
+    font-size: 24px; /* Define o tamanho da fonte dos botões para 24 pixels */
+    color: rgb(8, 7, 7); /* Define a cor do texto dos botões */
+    cursor: pointer; /* Altera o cursor para uma mão ao passar sobre os botões */
+}
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer {
+    background-color: #333; /* Define a cor de fundo do rodapé */
+    color: white; /* Define a cor do texto dentro do rodapé */
+   
+  }
+  
+  footer .container {
+    display: flex; /* Exibe os elementos do rodapé em linha */
+    align-items: flex-start; /* Centraliza os itens verticalmente */
+    padding: 30px; /* Adiciona um preenchimento interno ao redor dos elementos do rodapé */
+    flex-wrap: wrap; /* Permite que os elementos quebrem para a próxima linha quando não houver espaço suficiente */
+  }
+  
+  footer .container > ul {
+    flex: 20px; /* Faz com que cada lista ocupe todo o espaço disponível */
+    list-style: none; /* Remove os marcadores de lista */
+    padding: 0; 
+    margin: 0;
+  }
+  
+  footer .container h3 {
+    margin-bottom: 16px; 
+    font-weight: 600;
+  }
+  
+  footer .container .redes-sociais a {
+    margin-right: 10px; 
+  }
+  
+  footer .container li {
+    margin: 10px 0; 
+    list-style-type: none;
+    
+  }
+  
+  footer .container a {
+    color: white; 
+    text-decoration: none; 
+  }
