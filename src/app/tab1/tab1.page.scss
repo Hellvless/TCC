@@ -1,0 +1,64 @@
+ion-content{
+  --ion-background-color: #8ba96e;
+
+}
+ion-toolbar{
+  text-align: center;
+box-shadow: none;
+}
+ion-header{
+  box-shadow: none;
+}
+#novoapp {
+  position: relative;
+  text-align: center;
+}
+
+
+#text-top{
+  font-size: 30px;
+}
+
+#linklog {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+}
+
+#linkpass {
+  position: relative;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  color: white;
+}
+
+ion-input.input , div{
+--background:#8ba96e;
+margin-top: 30%;
+
+}
+
+.input{
+  border: none;
+  --border: none;
+  box-shadow: none;
+  --background: none
+  background-color: white;
+}
+
+#icon{
+  width: 40px;
+  height: 40px;
+  margin: 0;
+  padding: 0 10px 0 0;
+  border: 0;
+}
+
+#loginother{
+width: 66%;
+font-size: 12.5px;
+}
+
+#hd{
+  color: #8ba96e;
+}
