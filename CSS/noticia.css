@@ -1,0 +1,222 @@
+body {
+    background-color: #f7fafc;
+    font-family: 'Roboto', sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+     background-color: #eff2e4;
+  }
+  
+  .navbar-left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    background-color: rgb(16, 8, 8);
+    padding: 5px;
+    border-radius: 5px;
+    position: relative;
+  }
+  
+  .btn-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px; /* Deve corresponder ao tamanho da imagem */
+    height: 40px; /* Deve corresponder ao tamanho da imagem */
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .nav-items {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+  
+  }
+  
+  .nav-item {
+    display: flex;
+    align-items: center;
+    color: rgb(1, 1, 1);
+    margin-right: 20px;
+  
+  }
+  .nav-item a {
+    text-decoration: none; /* Remove a linha embaixo */
+    display: inline-block; /* Permite estilizar como um botão */
+    padding: 7px 10px; /* Espaçamento interno */
+    background-color: white; /* Cor de fundo padrão */
+    color: #000000; /* Cor do texto */
+    border-radius: 5px; /* Bordas arredondadas */
+    transition: background-color 0.3s; /* Suaviza a transição de cor */
+    border: 2px solid #ffffff; /* Borda para destacar */
+  }
+  
+  .nav-item a:hover {
+    background-color: #000000; /* Cor de fundo ao passar o mouse */
+    color: white; /* Muda a cor do texto ao passar o mouse */
+  }
+  
+  .nav-item i {
+    margin-right: 5px;
+  }
+  
+  .navbar-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .right-items {
+    display: flex;
+    align-items: center;
+  }
+  
+  .upgrade-button {
+    background-color: #FFEB3B;
+    color: rgb(0, 0, 0);
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px; /* Espaço entre os botões */
+  }
+  
+  .avatar {
+    background-color: #080606;
+    padding: 5px;
+    border-radius: 50%;
+    margin-left: 10px; /* Espaço entre a avatar e os botões */
+  }
+  
+  .avatar img {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+   /* Estilos de container e grid */
+   .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 16px;
+}
+
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.card {
+    background-color: #eff2e4;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+}
+
+.content {
+    padding: 16px;
+}
+
+.category {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+/* Categorias de cor */
+.category.blue { color: #3182ce; }
+.category.orange { color: #dd6b20; }
+.category.red { color: #e53e3e; }
+.category.purple { color: #805ad5; }
+.category.yellow { color: #d69e2e; }
+
+h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.description {
+    font-size: 14px;
+    color: #4a5568;
+}
+
+.footer {
+    padding: 16px;
+    border-top: 1px solid #e2e8f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer span {
+    font-size: 14px;
+    color: #4a5568;
+}
+
+.icons i {
+    color: #4a5568;
+    margin-left: 8px;
+    cursor: pointer;
+}
+
+.icons i:hover {
+    color: #2d3748;
+}
+
+
+
+
+
+
+
+
+
+.proxima{
+    display: flex; /* Usando flexbox para centralizar */
+    justify-content: center; /* Centralizando horizontalmente */
+    align-items: center; /* Centralizando verticalmente */
+}
+.proxima a {
+    color: #070606; /* Cor do texto do link */
+    text-decoration: none; /* Removendo sublinhado do link */
+    font-size: 30px; /* Tamanho da fonte */
+}
