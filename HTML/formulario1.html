@@ -1,0 +1,99 @@
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/CSS/formulario1.css">
+</head>
+<body>
+  <div class="container">
+    <section class="header">
+      <i class="bi bi-arrow-left-short"></i>
+      <h2>Formulário1</h2>
+    </section>
+
+    <form id="form" class="form">
+      <!-- Frequência de uso de transporte público -->
+      <div class="form-content">
+        <label for="public-transport">Com que frequência você utiliza transporte público?</label>
+        <select id="public-transport" name="public-transport" required>
+          <option value="" disabled selected>Selecione uma opção.ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ</option>
+          <option value="varias-vezes-ao-dia">Várias vezes ao dia (Impacto bastante reduzido)</option>
+          <option value="uma-ou-duas-vezes">Uma ou duas vezes ao dia (Impacto reduzido)</option>
+          <option value="tres-a-cinco">3-5 vezes por semana (Impacto moderadamente reduzido)</option>
+          <option value="mensalmente">Mensalmente (Impacto maior)</option>
+          <option value="raramente">Raramente (Impacto alto)</option>
+          <option value="nunca">Nunca (Impacto muito alto)</option>
+        </select>
+    
+      </div>
+
+      <div class="form-content">
+        <label for="public-transport">Quantas vezes você consome carne (bovina, suína, ou de frango)?
+        </label>
+        <select id="public-transport" name="public-transport" required>
+          <option value="" disabled selected>Selecione uma opção</option>
+          <option value="varias-vezes-ao-dia"> Mais de uma vez por dia (Impacto muito alto,especialmente para carne bovina)</option>
+          <option value="uma-ou-duas-vezes"> 4-6 vezes por semana (Impacto moderado)</option>
+          <option value="tres-a-cinco">1-3 vezes por semana (Impacto médio)</option>
+          <option value="mensalmente"> Raramente (Impacto reduzido)</option>
+          <option value="raramente"> Nunca (Impacto muito reduzido)</option>
+        </select>
+    
+      </div>
+
+
+      <!-- Voos por ano -->
+      <div class="form-content">
+        <label for="flights-per-year">Quantos voos você faz por ano?</label>
+        <input
+          type="number"
+          id="flights-per-year"
+          name="flights-per-year"
+          placeholder="Digite a quantidade de voos"
+          required
+        />
+     
+      </div>
+
+      <!-- Consumo de água -->
+      <div class="form-content">
+        <label for="water-consumption">Qual é o seu consumo médio de água por mês (em metros cúbicos)?</label>
+        <input
+          type="number"
+          id="water-consumption"
+          name="water-consumption"
+          placeholder="Digite o consumo em m³"
+          required
+        />
+      
+      </div>
+      <button type="button" onclick="redirect()">continuar</button>
+    </form>
+  </div>
+  <script>
+    function redirect() {
+      window.location.href = 'formulario2.html';
+    }
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
