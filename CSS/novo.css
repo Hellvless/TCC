@@ -115,10 +115,11 @@ body {
   display: none; /* Inicialmente escondido */
   position: absolute; /* Posiciona o menu em relação ao seu elemento pai */
   background-color: white; /* Cor de fundo do menu */
-  border: 1px solid #ccc; /* Borda para o menu */
+  border: 3px solid #ccc; /* Borda para o menu */
   border-radius: 5px; /* Bordas arredondadas */
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra */
   list-style-type: none; /* Remove os marcadores da lista */
+  right: 3px;
   padding: 0; /* Remove o preenchimento padrão */
   margin: 0; /* Remove a margem padrão */
   z-index: 1000; /* Garante que o menu apareça acima de outros elementos */
@@ -137,7 +138,9 @@ body {
 .dropdown-menu li a:hover {
   background-color: #f0f0f0; /* Cor de fundo ao passar o mouse */
 }
-
+#user-icon{
+  cursor: pointer;
+  }
 
 
 
