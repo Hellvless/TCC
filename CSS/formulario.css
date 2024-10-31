@@ -157,6 +157,7 @@ background-color: #f0f0f0; /* Cor de fundo ao passar o mouse */
   width: 100%;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1); /* Efeito de sombra suavizado */
   overflow: hidden;
+  margin-top: 50px;
 }
 
 .header {
