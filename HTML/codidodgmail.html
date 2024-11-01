@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/codigogmail.css">
+    <title>Login EcoPrint</title>
+</head>
+
+<body>
+    <script type="module" src="/JAVASCRIPT/login.js"></script>
+    <div id="fundo">
+        <div class="content-box">
+            <div class="form-box">
+                <h2>Insira o Código</h2>
+                <h3>Enviamos um código para o seu e-mail. Caso ele não apareça, tenha certeza de checar a sua caixa de spam.</h3>
+                    <div class="input-box">
+                        <span>Código de Recuperação </span>
+                        <input type="text" 
+                        id="email" placeholder="xxx-xxx" maxlength="6" oninput="this.value = this.value.toUpperCase();">
+                    </div>
+                    <div class="input-box">
+                        <button onclick="login(event)" type="submit" id="Enviar">Enviar Código</button>
+                    </div>
+                 <form action="esqueceu.html"><input type="submit" value="Voltar" class="back-btn" href="esqueceu.html"></button></form>
+                
+        </div>
+    </div>
+</body>
+
+</html>
