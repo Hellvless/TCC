@@ -123,16 +123,17 @@ margin-left: 30%;
 
 /* de clicar no icone */
 .dropdown-menu {
-display: none; /* Inicialmente escondido */
-position: absolute; /* Posiciona o menu em relação ao seu elemento pai */
-background-color: white; /* Cor de fundo do menu */
-border: 1px solid #ccc; /* Borda para o menu */
-border-radius: 5px; /* Bordas arredondadas */
-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra */
-list-style-type: none; /* Remove os marcadores da lista */
-padding: 0; /* Remove o preenchimento padrão */
-margin: 0; /* Remove a margem padrão */
-z-index: 1000; /* Garante que o menu apareça acima de outros elementos */
+  display: none; /* Inicialmente escondido */
+  position: absolute; /* Posiciona o menu em relação ao seu elemento pai */
+  background-color: white; /* Cor de fundo do menu */
+  border: 3px solid #ccc; /* Borda para o menu */
+  border-radius: 5px; /* Bordas arredondadas */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+  list-style-type: none; /* Remove os marcadores da lista */
+  right: 3px;
+  padding: 0; /* Remove o preenchimento padrão */
+  margin: 0; /* Remove a margem padrão */
+  z-index: 1000; /* Garante que o menu apareça acima de outros elementos */
 }
 
 .dropdown-menu li {
