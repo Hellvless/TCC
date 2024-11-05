@@ -10,55 +10,57 @@
 </head>
 
 <body>
+    <script type="module" src="../JAVASCRIPT/cadastro.js"></script>
         <div class="form">
-            <form action="#">
+            <form id="form" autocomplete="on">
                 <div class="form-header">
                     <div class="title">
                         <h1>Cadastre-se</h1>
                     </div>
                     <div class="login-button">
-                        <button><a href="novo.html">Voltar</a></button>
+                        <button><a href="../HTML/login.html">Entrar</a></button>
                     </div>
                 </div>
 
                 <div class="input-group">
                     <div class="input-box">
-                        <label for="firstname">Nome</label>
-                        <input id="firstname" type="text" name="firstname" placeholder="Digite o seu  nome" required>
+                        <label>Nome</label>
+                        <input id="nome" type="text" name="firstname" placeholder="Digite o seu  nome" required>
                     </div>
 
                     <div class="input-box">
-                        <label for="lastname">Sobrenome</label>
-                        <input id="lastname" type="text" name="lastname" placeholder="Digite seu sobrenome" required>
+                        <label>Sobrenome</label>
+                        <input id="sobrenome" type="text" name="lastname" placeholder="Digite seu sobrenome" required>
                     </div>
                     <div class="input-box">
-                        <label for="email">E-mail</label>
+                        <label>Email</label>
                         <input id="email" type="email" name="email" placeholder="Digite seu e-mail" required>
                     </div>
+    
+                    <div class="input-box">
+                        <label>Celular</label>
+                        <input id="telefone" type="tel" name="number" placeholder="(xx) xxxx-xxxx" required>
+                    </div>
+    
+                    <div class="input-box">
+                        <label>Senha</label>
+                        <input id="senha" type="password" name="password" placeholder="Digite sua senha" required>
+                    </div>
+
 
                     <div class="input-box">
-                        <label for="number">Celular</label>
-                        <input id="number" type="tel" name="number" placeholder="(xx) xxxx-xxxx" required>
+                        <label>Confirme sua Senha</label>
+                        <input id="confirmarSenha" type="password" name="confirmPassword"
+                            placeholder="Digite sua senha novamente" required>
                     </div>
 
                     <div class="input-box">
-                        <label for="password">Senha</label>
-                        <input id="password" type="password" name="password" placeholder="Digite sua senha" required>
-                    </div>
-
-
-                    <div class="input-box">
-                        <label for="confirmPassword">Confirme sua Senha</label>
-                        <input id="confirmPassword" type="password" name="confirmPassword" placeholder="Digite sua senha novamente" required>
-                    </div>
-
-                    <div class="input-box">
-                        <label for="idade">Idade</label>
-                        <input id="idade" type="number" min="0" name="idade" placeholder="Digite sua idade" required>
+                        <label>Idade</label>
+                        <input id="idade" type="number" name="idade" placeholder="Digite sua idade" required>
                     </div>
        
                     <div class="input-box">
-                        <label for="sexo">Sexo</label>
+                        <label>Sexo</label>
                         <select id="sexo" name="sexo" required>
                             <option value="">Selecione..ㅤㅤㅤㅤㅤㅤㅤㅤ</option>
                             <option value="masculino">Masculino</option>
@@ -68,7 +70,7 @@
                 </div>
 
                 <div class="continue-button">
-                    <button><a href="#">Cadastrar</a> </button>
+                    <button onclick="cadastrar()" type="button" id="enviar">Continuar</button>
                 </div>
             </form>
         </div>
