@@ -191,13 +191,6 @@ background-color: #f0f0f0; /* Cor de fundo ao passar o mouse */
   border: 2px solid #dfdfdf;
 }
 
-.form-content a {
-  position: absolute;
-  bottom: -8px;
-  left: 0;
-  visibility: hidden;
-}
-
 .form button {
   background-color: #0fb633a2;
   color: #FFF;
@@ -218,3 +211,29 @@ background-color: #f0f0f0; /* Cor de fundo ao passar o mouse */
   color: #ff3b25;
   visibility: visible;
 }
+
+.input-box select {
+  display: block;
+  width: 100%;
+  border-radius: 8px;
+  padding: 8px;
+  border: 2px solid #dfdfdf;
+}
+
+/* Adiciona a seta personalizada */
+.input-box {
+  position: relative;
+  margin-bottom: 8px;
+  
+}
+
+.input-box select::after {
+  content: "▼";
+  font-size: 0.8rem;
+  position: absolute;
+  right: 1.2rem;
+  top: calc(50% - 0.5em);
+  pointer-events: none;
+  color: #000000c0;
+}
+
