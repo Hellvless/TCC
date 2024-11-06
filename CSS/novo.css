@@ -230,6 +230,30 @@ cursor: pointer;
     margin: 0 auto;
     background-color: #000;
   }
+
+.alinhamento-quebra{
+
+  width: 100%;
+  background-color: #000
+}
+
+  #quebra-linha{
+    background-color: rgb(255, 255, 255);
+    width: 95%;
+    height: 2.4px;
+    border-radius: 10px;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+  }
+
+
+  .anuncio {
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+    margin: 0 auto;
+    background-color: #000;
+  }
   .text h1{
     color: #ffffff;
   } 
