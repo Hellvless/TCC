@@ -179,27 +179,12 @@ button [disabled]{
     margin-top: 5px;
 }
 .back-btn{
-    background: #eff2e4;
-    color: black;
-    outline: none;
-    border: 2px solid;
-
-    
-    font-weight: 500;
-    cursor: pointer;
-    font-size: 20px;
-    transition: background 0.3s;
-    padding: 10px 20px;
-    max-width: 150px;
-    width: auto;
-    display: inline-block;
-    border-radius: 5px;
-    margin-top: 2em;
-}
-.back-btn:hover{
-    background: black;
-    color: white;
-}
+    color: #8ba96e;
+    transition: 0.3s;
+   }
+   .back-btn:hover{
+       color: #738f59;
+   }
 #Enviar{
 
     background: #8ba96e;

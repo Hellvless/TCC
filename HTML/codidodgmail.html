@@ -22,12 +22,16 @@
                         id="email" placeholder="xxx-xxx" maxlength="6" oninput="this.value = this.value.toUpperCase();">
                     </div>
                     <div class="input-box">
-                        <button onclick="login(event)" type="submit" id="Enviar">Enviar Código</button>
+                        <button type="submit" id="Enviar"><a href="../HTML/redefinir.html" style="text-decoration: none; color: white;">Enviar Código</a></button>
                     </div>
                  <form action="esqueceu.html"><input type="submit" value="Voltar" class="back-btn" href="esqueceu.html"></button></form>
                 
         </div>
     </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+      new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
 </body>
 
 </html>
