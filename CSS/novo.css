@@ -21,22 +21,27 @@ body {
 
 .logo {
     display: flex;
-    align-items: center;
     background-color: rgb(16, 8, 8);
     padding: 5px;
     border-radius: 5px;
     position: relative;
+    width: 120px;
+    text-decoration: none;
+}
+.logo img {
+  max-width: 100px;  /* Limita a largura máxima da imagem */
+  max-height: 40px;  /* Limita a altura máxima da imagem */
+  width: auto;  /* Ajusta a largura automaticamente */
+  height: auto;  /* Ajusta a altura automaticamente */
 }
 
 .btn-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100px;
-    height: 40px;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
+  text-decoration: none; /* Remove o sublinhado do link */
+  color: white;           /* Define a cor do texto do link */
+  font-size: 16px;       /* Define o tamanho da fonte */
+  padding: 10px;     /* Adiciona um pouco de espaço interno */
+  border: 1px solid #000; /* Adiciona uma borda ao redor do link */
+  border-radius: 4px;
 }
 
 .nav-items {
@@ -224,6 +229,30 @@ cursor: pointer;
 
 
 .tudotxt {
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+    margin: 0 auto;
+    background-color: #000;
+  }
+
+.alinhamento-quebra{
+
+  width: 100%;
+  background-color: #000
+}
+
+  #quebra-linha{
+    background-color: rgb(255, 255, 255);
+    width: 95%;
+    height: 2.4px;
+    border-radius: 10px;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+  }
+
+
+  .anuncio {
     display: flex;
     align-items: center;
     max-width: 100%;
