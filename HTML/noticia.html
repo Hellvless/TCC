@@ -14,47 +14,66 @@
       <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
     </head>
     <body>
-    <header>
-        <nav class="navbar">
-            <div class="navbar-left">
-                <div class="logo">
-                    <img src="logo 1.png" alt="Symbolab logo" class="h-8" width="100" height="40">
-                    <a href="novo.html" class="btn-overlay"></a> 
-                </div>
-                <div class="nav-items">
-                    <div class="nav-item">
-                        <i class="bi bi-search"></i>
-                        <a href="noticia.html">noticia</a>
+        <header>
+            <nav class="navbar">
+                <div class="navbar-left">
+                    <a href="novo.html" class="logo">  <!-- Agora a div logo está dentro do link -->
+                        <img src="../IMAGE/logo.png" alt="EcoPrint">
+                        <span class="btn-overlay">Ecoprint</span>
+                    </a>
                     </div>
-                    <div class="nav-item">
-                        <i class="fas fa-chart-line"></i>
-                        <a href="missoes.html">missoes</a>
-                    </div>
-                    <div class="nav-item">
-                        <i class="fas fa-calculator"></i>
-                        <a href="formulario.html">Calculadoras</a>
-                    </div>
-                    <div class="nav-item">
-                        <i class="fas fa-store"></i>
-                        <a href="gamificaçao.html">premiações</a>
-                    </div>
-                    <div class="nav-item">
-                        <i class="fas fa-store"></i>
-                        <a href="gamificaçao.html">sobre nos</a>
+                    <div class="nav-items">
+                        <div class="nav-item">
+                            <i class="bi bi-search"></i>
+                            <a href="noticia.html">Notícias</a>
+                        </div>
+                        <div class="nav-item">
+                            <i class="fas fa-chart-line"></i>
+                            <a href="../HTML/missao.html">Ranks</a>
+                        </div>
+                        <div class="nav-item">
+                            <i class="fas fa-calculator"></i>
+                            <a href="formulario.html">Calculadora</a>
+                        </div>
+                        <div class="nav-item">
+                            <i class="fas fa-store"></i>
+                            <a href="gamificaçao.html">Sobre Nós</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="navbar-right">
-                <div class="right-items">
-                   
-                  botao de pesquisar!!!!
-                    <div class="avatar">
-                        <img src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-RcpoXHkzChYnDbFAyeQ8tamr/user-ehrvabJ3DufsCu8YJ7PqY5gl/img-tu38iiHvFp0Fk56lCazxlTm9.png?st=2024-09-07T02%3A57%3A11Z&amp;se=2024-09-07T04%3A57%3A11Z&amp;sp=r&amp;sv=2024-08-04&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-09-06T21%3A40%3A09Z&amp;ske=2024-09-07T21%3A40%3A09Z&amp;sks=b&amp;skv=2024-08-04&amp;sig=5tz%2Bdyz7twKJEE%2BLq0i1VHFl8/g/DWeYTBHXE0c9laI%3D" alt="User avatar" class="rounded-full" width="30" height="30">
+                <div class="navbar-right">
+                    <div class="right-items">
+                        <a href="upgrade" class="upgrade-button">Premium</a>ㅤ
+                        <a href="login.html" class="upgrade-button">Logar</a>ㅤ
+                        <a href="cadastro.html" class="upgrade-button">Cadastre-se</a>
+                        <div class="avatar">
+                            <i class="bi bi-person-circle icon-large" id="user-icon"></i>
+                            <ul class="dropdown-menu" id="dropdown-menu">
+                                <li><a href="configuracao.html">Configuração</a></li>
+                                <li><a href="mudar-avatar.html">Mudar Avatar</a></li>
+                                <li><a href="../HTML/feedback.html">Contate-nos</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </nav>
-    </header>
+            </nav>
+        </header>
+    
+        <script>
+            const userIcon = document.getElementById('user-icon');
+            const dropdownMenu = document.getElementById('dropdown-menu');
+        
+            userIcon.addEventListener('click', () => {
+                dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+            });
+        
+            // Fecha o menu se o usuário clicar fora dele
+            window.addEventListener('click', (event) => {
+                if (!userIcon.contains(event.target) && !dropdownMenu.contains(event.target)) {
+                    dropdownMenu.style.display = 'none';
+                }
+            });
+        </script>
  <br>
 
 

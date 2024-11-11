@@ -16,51 +16,64 @@
   <script src="../JAVASCRIPT/formulario.js"></script>
   <header>
     <nav class="navbar">
-      <div class="navbar-left">
-        <a href="novo.html" class="logo">  <!-- Agora a div logo está dentro do link -->
-            <img src="../IMAGE/logo.png" alt="EcoPrint">
-            <span class="btn-overlay">Ecoprint</span>
-        </a>
-        </div>
-        <div class="nav-items">
-            <div class="nav-item">
-                <i class="bi bi-search"></i>
-                <a href="noticia.html">noticia</a>
+        <div class="navbar-left">
+            <a href="novo.html" class="logo">  <!-- Agora a div logo está dentro do link -->
+                <img src="../IMAGE/logo.png" alt="EcoPrint">
+                <span class="btn-overlay">Ecoprint</span>
+            </a>
             </div>
-            <div class="nav-item">
-                <i class="fas fa-chart-line"></i>
-                <a href="missoes.html">missoes</a>
-            </div>
-            <div class="nav-item">
-                <i class="fas fa-calculator"></i>
-                <a href="formulario.html">Calculadora</a>
-            </div>
-            <div class="nav-item">
-                <i class="fas fa-store"></i>
-                <a href="gamificaçao.html">premiações</a>
-            </div>
-            <div class="nav-item">
-                <i class="fas fa-store"></i>
-                <a href="gamificaçao.html">sobre nos</a>
+            <div class="nav-items">
+                <div class="nav-item">
+                    <i class="bi bi-search"></i>
+                    <a href="noticia.html">Notícias</a>
+                </div>
+                <div class="nav-item">
+                    <i class="fas fa-chart-line"></i>
+                    <a href="../HTML/missao.html">Ranks</a>
+                </div>
+                <div class="nav-item">
+                    <i class="fas fa-calculator"></i>
+                    <a href="formulario.html">Calculadora</a>
+                </div>
+                <div class="nav-item">
+                    <i class="fas fa-store"></i>
+                    <a href="gamificaçao.html">Sobre Nós</a>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="navbar-right">
-        <div class="right-items">
-            <a href="upgrade" class="upgrade-button">upgrade</a>ㅤ
-            <a href="login.html" class="upgrade-button">login</a>ㅤ
-            <a href="cadastro.html" class="upgrade-button">sing up </a>
-            <div class="avatar">
-                <i class="bi bi-person-circle icon-large" id="user-icon"></i>
-                <ul class="dropdown-menu" id="dropdown-menu">
-                    <li><a href="configuracao.html">Configuração</a></li>
-                    <li><a href="mudar-avatar.html">Mudar Avatar</a></li>
-                    <li><a href="contate-nos.html">Contate-nos</a></li>
-                </ul>
+        <div class="navbar-right">
+            <div class="right-items">
+                <a href="upgrade" class="upgrade-button">Premium</a>ㅤ
+                <a href="login.html" class="upgrade-button">Logar</a>ㅤ
+                <a href="cadastro.html" class="upgrade-button">Cadastre-se</a>
+                <div class="avatar">
+                    <i class="bi bi-person-circle icon-large" id="user-icon"></i>
+                    <ul class="dropdown-menu" id="dropdown-menu">
+                        <li><a href="configuracao.html">Configuração</a></li>
+                        <li><a href="mudar-avatar.html">Mudar Avatar</a></li>
+                        <li><a href="../HTML/feedback.html">Contate-nos</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
-</nav></header>
+    </nav>
+</header>
+
+<script>
+    const userIcon = document.getElementById('user-icon');
+    const dropdownMenu = document.getElementById('dropdown-menu');
+
+    userIcon.addEventListener('click', () => {
+        dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+    });
+
+    // Fecha o menu se o usuário clicar fora dele
+    window.addEventListener('click', (event) => {
+        if (!userIcon.contains(event.target) && !dropdownMenu.contains(event.target)) {
+            dropdownMenu.style.display = 'none';
+        }
+    });
+</script>
 
   <div class="container">
     <section class="header">
