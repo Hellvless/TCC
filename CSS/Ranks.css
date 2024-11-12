@@ -1,0 +1,273 @@
+*,
+*:after,
+*:before {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  text-decoration: none;
+}
+:root {
+  --white: black;
+  --black: #8ba96e ;
+  --blue: #21537f;
+  --dark: white;
+  --purple: #eff2e4;
+  --orange: #ffae70;
+  --red: #738f59 ;
+  --green: #070c05;
+}
+body * {
+  font-family: "Roboto", sans-serif;
+}
+body {
+  height: 100vh;
+  background: #eff2e4;
+  justify-content: center;
+  align-items: center;
+}
+.card {
+  width: 300px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--dark);
+  border-radius: 10px;
+  border: 1px solid rgb(18 216 178/1);
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    margin-left: 38%;
+    margin-top: 150px;
+}
+.card-title {
+  padding-bottom: 14px;
+  color: var(--white);
+  text-align: center;
+}
+.list,
+.list-item,
+.list-item-body,
+.list-item-header {
+  display: flex;
+}
+.list {
+  width: 100%;
+  padding: 10px;
+  flex-direction: column;
+  gap: 8px;
+}
+.list-item {
+  width: calc(100% - 20px);
+  max-height: 60px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+.list-item-header {
+  width: 20%;
+  align-items: center;
+}
+.list-item-header-badge {
+  position: fixed;
+  margin-top: -20px;
+  margin-left: -4px;
+  width: 14px;
+  display: block;
+  padding: 2px;
+  border-radius: 50%;
+  background-color: var(--red);
+  text-align: center;
+  font-weight: 900;
+  font-size: 10px;
+  line-height: 10px;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px,
+    rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+  color: var(--white);
+}
+.list-item-icon {
+  width: calc(95% - 10px);
+  max-height: 50px;
+  border-radius: 50%;
+  border: 2px solid var(--green);
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+.list-item-body {
+  width: 80%;
+  flex-direction: column;  
+}
+.list-item-title {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 900;
+  color: var(--white);
+  letter-spacing: 0.125rem;
+}
+.list-item-subtitle {
+  font-size: 10px;
+  line-height: 10px;
+  font-weight: 500;
+  color: var(--blue);
+  letter-spacing: 0.1rem;
+}
+.list-item-progress-bar {
+  height: 8px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 2px;
+  background: var(--purple);
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+.list-item-progress-bar span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  overflow: hidden;
+  background: var(--red);
+  transition: width 0.6s ease;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #8ba96e;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  background-color: rgb(16, 8, 8);
+  padding: 5px;
+  border-radius: 5px;
+  position: relative;
+  width: 120px;
+  text-decoration: none;
+}
+.logo img {
+max-width: 100px;  /* Limita a largura máxima da imagem */
+max-height: 40px;  /* Limita a altura máxima da imagem */
+width: auto;  /* Ajusta a largura automaticamente */
+height: auto;  /* Ajusta a altura automaticamente */
+}
+
+.btn-overlay {
+text-decoration: none; /* Remove o sublinhado do link */
+color: white;           /* Define a cor do texto do link */
+font-size: 16px;       /* Define o tamanho da fonte */
+padding: 10px;     /* Adiciona um pouco de espaço interno */
+border: 1px solid #000; /* Adiciona uma borda ao redor do link */
+border-radius: 4px;
+}
+
+.nav-items {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  color: rgb(1, 1, 1);
+  margin-right: 20px;
+}
+
+.nav-item a {
+  text-decoration: none;
+  display: inline-block;
+  padding: 7px 10px;
+  background-color: white;
+  color: #000000;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  border: 2px solid #ffffff;
+}
+
+.nav-item a:hover {
+  background-color: #000000;
+  color: white;
+}
+
+.nav-item i {
+  margin-right: 5px;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.right-items {
+  display: flex;
+  align-items: center;
+}
+
+.upgrade-button {
+  text-decoration: none;
+  display: inline-block;
+  padding: 7px 10px;
+  background-color: white;
+  color: #000000;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  border: 2px solid #ffffff;
+}
+
+.upgrade-button a:hover {
+  background-color: #000000;
+  color: white;
+}
+
+.avatar {
+  padding: 5px;
+  border-radius: 50%;
+  margin-left: 10px;
+}
+
+.icon-large {
+  font-size: 2rem; /* Aumente o tamanho conforme necessário */
+  color: #000; /* Altere a cor se desejar */
+}
+
+
+/* de clicar no icone */
+.dropdown-menu {
+display: none; /* Inicialmente escondido */
+position: absolute; /* Posiciona o menu em relação ao seu elemento pai */
+background-color: white; /* Cor de fundo do menu */
+border: 3px solid #ccc; /* Borda para o menu */
+border-radius: 5px; /* Bordas arredondadas */
+box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+list-style-type: none; /* Remove os marcadores da lista */
+right: 3px;
+padding: 0; /* Remove o preenchimento padrão */
+margin: 0; /* Remove a margem padrão */
+z-index: 1000; /* Garante que o menu apareça acima de outros elementos */
+}
+
+.dropdown-menu li {
+padding: 10px; /* Espaçamento interno dos itens do menu */
+}
+
+.dropdown-menu li a {
+text-decoration: none; /* Remove a linha embaixo */
+color: #000; /* Cor do texto */
+display: block; /* Faz o link ocupar toda a área do item */
+}
+
+.dropdown-menu li a:hover {
+background-color: #f0f0f0; /* Cor de fundo ao passar o mouse */
+}
+#user-icon{
+cursor: pointer;
+}

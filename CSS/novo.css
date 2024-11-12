@@ -356,7 +356,7 @@ h2 {
 }
 
 #clima {
-    background: linear-gradient(#8ba96e, black);
+    background: linear-gradient(#8ba96e, #21291b);
     border-radius: 20px;
     padding: 18px;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
