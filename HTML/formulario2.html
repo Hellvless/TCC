@@ -76,45 +76,45 @@
         }
     });
 </script>
-  <div class="container">
-    <section class="header">
-      <h2>Formulário de Consumo </h2>
-    </section>
+<div class="container">
+  <section class="header">
+    <h2>Formulário de Consumo </h2>
+  </section>
 
-    <form id="form" class="form">
-      <!-- Frequência de uso de transporte público -->
-      <div class="form-content">
-        <label for="public-transport">Você consome alimentos orgânicos?</label>
-        <select id="organic-food" name="organic-food" required>
-          <option value="" disabled selected>Selecione uma opção</option>
-          <option value="varias-vezes-ao-dia">Sim,em todas as refeições(Impacto ambiental muito reduzido,alta sustentabilidade)</option>
-          <option value="uma-ou-duas-vezes"> Sim, regularmente (Impacto reduzido,
-            sustentabilidade considerável)</option>
-          <option value="tres-a-cinco"> Às vezes (Impacto moderado)</option>
-          <option value="mensalmente">Mensalmente (Impacto maior)</option>
-          <option value="raramente">Raramente (Impacto ambiental médio)</option>
-          <option value="nunca"> Nunca (Impacto ambiental mais alto)</option>
-        </select>
-    
-      </div>
+  <form id="form" class="form">
+    <!-- Frequência de uso de transporte público -->
+    <div class="form-content">
+      <label for="alimento-organico">Você consome alimentos orgânicos?</label>
+      <select id="alimento-organico" name="alimento-organico">
+        <option value="" disabled selected>Selecione uma opção</option>
+        <option value="varias-vezes-ao-dia">Sim, em todas as refeições(Impacto ambiental muito reduzido, alta sustentabilidade)</option>
+        <option value="uma-ou-duas-vezes"> Sim, regularmente (Impacto reduzido,
+          sustentabilidade considerável)</option>
+        <option value="tres-a-cinco"> Às vezes (Impacto moderado)</option>
+        <option value="mensalmente">Mensalmente (Impacto maior)</option>
+        <option value="raramente">Raramente (Impacto ambiental médio)</option>
+        <option value="nunca"> Nunca (Impacto ambiental mais alto)</option>
+      </select>
+  
+    </div>
 
-      <div class="form-content">
-        <label for="public-transport">Quantas vezes por mês você recicla ou reutiliza produtos?
+    <div class="form-content">
+      <label for="recicla">Quantas vezes por mês você recicla ou reutiliza produtos?
 
-        </label>
-        <select id="recycled-products" name="recycled-products" required>
-          <option value="" disabled selected>Selecione uma opçãoㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ</option>
-          <option value="varias-vezes-ao-dia"> Sempre (Impacto ambiental muito reduzido)</option>
-          <option value="uma-ou-duas-vezes">  Algumas vezes (Impacto ambiental reduzido)</option>
-          <option value="tres-a-cinco">Nunca (Impacto ambiental elevado)</option>
-        </select>
-    
-      </div>
+      </label>
+      <select id="recicla" name="recicla">
+        <option value="" disabled selected>Selecione uma opçãoㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ</option>
+        <option value="varias-vezes-ao-dia"> Sempre (Impacto ambiental muito reduzido)</option>
+        <option value="uma-ou-duas-vezes">  Algumas vezes (Impacto ambiental reduzido)</option>
+        <option value="tres-a-cinco">Nunca (Impacto ambiental elevado)</option>
+      </select>
+  
+    </div>
 
 
-      <button onclick="CompleteForm()" >continuar</button>
-    </form>
-  </div>
+    <button onclick="salvarDados(), redirect3()" type="button">continuar</button>
+  </form>
+</div>
   <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
   <script>
     new window.VLibras.Widget('https://vlibras.gov.br/app');
