@@ -1,9 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&display=swap');
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     justify-content: center;
     align-items: flex;
+    background-color:#eff2e4 ;
 }
 
 .navbar {
@@ -11,7 +13,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    background-color: #eff2e4;
+    background-color: #8ba96e;
 }
 
 .navbar-left {
@@ -190,15 +192,167 @@ cursor: pointer;
 
 
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&display=swap');
 
-.clima-container {
-    font-family: 'Poppins', sans-serif;
+
+
+
+
+
+
+ 
+
+  .anuncio {
     display: flex;
     align-items: center;
+    max-width: 100%;
+    margin: auto;
+    background-color: #000000;
+  }
+  .text h1{
+    color: #ffffff;
+  } 
+  .text {
+    flex: 1;
+    padding-right: 20px;
+    text-align: justify;
+  }
+  .text p{
+    color:rgb(255, 255, 255);
+  }
+  .text a{
+    text-decoration: none; /* Remove a linha embaixo */
+  display: inline-block; /* Permite estilizar como um botão */
+  padding: 7px 10px; /* Espaçamento interno */
+  background-color: white; /* Cor de fundo padrão */
+  color: #000000; /* Cor do texto */
+  border-radius: 5px; /* Bordas arredondadas */
+  transition: background-color 0.3s; /* Suaviza a transição de cor */
+  border: 2px solid #ffffff; /* Borda para destacar */
+  }
+
+  .text a:hover {
+    background-color: #000000; /* Cor de fundo ao passar o mouse */
+    color: white; /* Muda a cor do texto ao passar o mouse */
+  }
+
+  .slider {
+  
+    flex: 1;
+    display: flex;
     justify-content: center;
-    min-height: 100vh;
-    background: #eff2e4;
+    align-items: center;
+    max-width: 300px;
+    overflow: hidden;
+   
+  }
+  
+  .slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  
+  }
+  
+  .slide {
+    min-width: 100%;
+    box-sizing: border-box;
+  }
+  
+  img {
+    width: 100%;
+    vertical-align: middle;
+    color: white;
+  }
+
+
+
+
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+    gap: 20px;
+}
+
+/* Seção de Notícias */
+.news-container {
+    width: 50%;
+}
+
+.news-grid {
+    display: block;
+}
+
+.news-card {
+    display: flex;
+    align-items: flex-start;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 10px 0;
+    overflow: hidden;
+}
+
+.news-card img {
+    max-width: 250px;
+    height: 150px;
+    margin-right: 15px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.news-content {
+    flex-grow: 1;
+    padding: 16px;
+}
+
+.news-category {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #3182ce;
+}
+
+h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.news-description {
+    font-size: 14px;
+    color: #4a5568;
+}
+
+.news-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.news-footer span {
+    font-size: 14px;
+    color: #4a5568;
+}
+
+.social-icons i {
+    color: #4a5568;
+    margin-left: 8px;
+    cursor: pointer;
+}
+
+.social-icons i:hover {
+    color: #2d3748;
+}
+
+/* Seção de Clima */
+.clima-container {
+    display: flex;
+    justify-content: center;
+    width: 50%;
 }
 
 #clima {
@@ -207,8 +361,7 @@ cursor: pointer;
     padding: 18px;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 350px; /* Limitando a largura máxima */
-    margin: 0 20px; /* Garantindo espaçamento nas laterais */
+    max-width: 350px;
 }
 
 #search {
@@ -325,243 +478,15 @@ cursor: pointer;
 }
 
 #alert {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #alert img {
-    width: 200px;
-    margin-top: 20px;
+  width: 200px;
+  margin-top: 20px;
 }
-
-
-
-
-.tudotxt {
-    display: flex;
-    align-items: center;
-    max-width: 100%;
-    margin: 0 auto;
-    background-color: #000;
-  }
-
-.alinhamento-quebra{
-
-  width: 100%;
-  background-color: #000
-}
-
-  #quebra-linha{
-    background-color: rgb(255, 255, 255);
-    width: 95%;
-    height: 2.4px;
-    border-radius: 10px;
-    margin-left: 2.5%;
-    margin-right: 2.5%;
-  }
-
-
-  .anuncio {
-    display: flex;
-    align-items: center;
-    max-width: 100%;
-    margin: 0 auto;
-    background-color: #000;
-  }
-  .text h1{
-    color: #ffffff;
-  } 
-  .text {
-    flex: 1;
-    padding-right: 20px;
-    text-align: justify;
-  }
-  .text p{
-    color:rgb(255, 255, 255);
-  }
-  .text a{
-    text-decoration: none; /* Remove a linha embaixo */
-  display: inline-block; /* Permite estilizar como um botão */
-  padding: 7px 10px; /* Espaçamento interno */
-  background-color: white; /* Cor de fundo padrão */
-  color: #000000; /* Cor do texto */
-  border-radius: 5px; /* Bordas arredondadas */
-  transition: background-color 0.3s; /* Suaviza a transição de cor */
-  border: 2px solid #ffffff; /* Borda para destacar */
-  }
-
-  .text a:hover {
-    background-color: #000000; /* Cor de fundo ao passar o mouse */
-    color: white; /* Muda a cor do texto ao passar o mouse */
-  }
-
-
-
-
-  
-  .slider {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 300px;
-    overflow: hidden;
-   
-  }
-  
-  .slides {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-  
-  }
-  
-  .slide {
-    min-width: 100%;
-    box-sizing: border-box;
-  }
-  
-  img {
-    width: 100%;
-    vertical-align: middle;
-  }
-
-
-
-
-
-
-
-
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 16px;
-    position: relative;
-    overflow: hidden; /* Esconde o conteúdo que ultrapassa a largura da tela */
-}
-
-.grid {
-    display: flex; /* Flexbox para colocar os cards em linha */
-    gap: 16px; /* Espaçamento entre os cards */
-    overflow-x: auto; /* Habilita rolagem horizontal */
-    scroll-behavior: smooth; /* Rolagem suave */
-    padding-bottom: 20px; /* Para que as setas não cortem o conteúdo */
-}
-
-.card {
-    min-width: 300px; /* Largura mínima dos cards para alinhá-los horizontalmente */
-    background-color: #eff2e4;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.card img {
-    width: 100%;
-    height: 180px; /* Ajuste a altura conforme necessário */
-    object-fit: cover;
-}
-
-.content {
-    padding: 16px;
-}
-
-.category {
-    font-size: 14px;
-    font-weight: bold;
-    margin-bottom: 8px;
-}
-
-.category.blue {
-    color: #3182ce;
-}
-
-.category.orange {
-    color: #dd6b20;
-}
-
-.category.red {
-    color: #e53e3e;
-}
-
-.category.purple {
-    color: #805ad5;
-}
-
-.category.yellow {
-    color: #d69e2e;
-}
-
-h2 {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 8px;
-}
-
-.description {
-    font-size: 14px;
-    color: #4a5568;
-}
-
-.footer {
-    padding: 16px;
-    border-top: 1px solid #e2e8f0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.footer span {
-    font-size: 14px;
-    color: #4a5568;
-}
-
-.icons i {
-    color: #4a5568;
-    margin-left: 8px;
-    cursor: pointer;
-}
-
-.icons i:hover {
-    color: #2d3748;
-}
-
-.scroll-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    z-index: 1;
-}
-
-.scroll-btn.left {
-    left: 0;
-}
-
-.scroll-btn.right {
-    right: 0;
-}
-
-@media (min-width: 768px) {
-    .grid {
-        /* Para quando houver mais espaço na tela, os cards ainda serão dispostos em linha horizontal */
-        grid-template-columns: none;
-    }
-}
-
-
-
-
-
-
 
 
 footer {

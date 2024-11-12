@@ -17,7 +17,7 @@
     <header>
         <nav class="navbar">
             <div class="navbar-left">
-                <a href="novo.html" class="logo">  <!-- Agora a div logo está dentro do link -->
+                <a href="novo.html" class="logo">  
                     <img src="../IMAGE/logo.png" alt="EcoPrint">
                     <span class="btn-overlay">Ecoprint</span>
                 </a>
@@ -103,215 +103,177 @@
 
 
     
-   
-    
-    
-    
-    
-    
-<div class="clima-container">
-    <div id="clima">
-        <form id="search">
-            <i class="fa-solid fa-location-dot"></i>
-            <input 
-                type="search" 
-                name="city_name" 
-                id="city_name" 
-                placeholder="Buscar cidade"
-            >
-            <button type="submit">
-                <i class="fa-solid fa-magnifying-glass"></i>
-            </button>
-        </form>
-
-        <div id="weather">
-            <h1 id="title">Rolante, BR</h1>
-
-            <div id="infos">
-                <div id="temp">
-                    <img id="temp_img" src="http://openweathermap.org/img/wn/04d@2x.png" alt="">
-                    
-                    <div>
-                        <p id="temp_value">
-                            32 
-                        </p>
-                        <p id="temp_description">
-                            Ensolarado
-                        </p>
-                    </div>
-                </div>
-
-                <div id="other_infos">
-                    <div class="info">
-                        <i id="temp_max_icon" class="fa-solid fa-temperature-high"></i>
-
-                        <div>
-                            <h2>Temp. max</h2>
-
-                            <p id="temp_max">
-                                32 <sup>C°</sup>
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="info">
-                        <i id="temp_min_icon" class="fa-solid fa-temperature-low"></i>
-
-                        <div>
-                            <h2>Temp. min</h2>
-
-                            <p id="temp_min">
-                                12 <sup>C°</sup>
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="info">
-                        <i id="humidity_icon" class="fa-solid fa-droplet"></i>
-
-                        <div>
-                            <h2>Humidade</h2>
-
-                            <p id="humidity">
-                                50%
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="info">
-                        <i id="wind_icon" class="fa-solid fa-wind"></i>
-
-                        <div>
-                            <h2>Vento</h2>
-
-                            <p id="wind">
-                                50 km/h
-                            </p>
-                        </div>
-                    </div>
-                </div>
+</div>
+<section class="anuncio">
+    <div class="text">
+     
+        <h1>Baixe também o nosso aplicativo!    </h1>
+        <p>Fique por dentro da sua pegada de carbono 24 horas por dia com o nosso aplicativo
+            EcoPrint.
+        </p>
+     <a href="a">Baixar App</a>
+    </div>
+    <div class="slider">
+            <div class="slide">
+                <img src="../IMAGE/Entrar.png" alt="Imagem 1">
             </div>
         </div>
-        
-    </section>
-
-    
-    
-    
-    
-
-        <div id="alert"></div>
     </div>
-</div>
-
-<script src="../JAVASCRIPT/clima.js"></script>
     
-    
-    
-
-        <div id="alert"></div>
-    </div>
-</div>
-    <div class="alinhamento-quebra">
-   < id="quebra-linha"></
-
-</div>
-    <section class="anuncio">
-        <div class="text">
-         
-            <h1>Baixe também o nosso aplicativo!    </h1>
-            <p>Fique por dentro da sua pegada de carbono 24 horas por dia com o nosso aplicativo
-                EcoPrint.
-            </p>
-         <a href="a">Baixar App</a>
-        </div>
-        <div class="slider">
-                <div class="slide">
-                    <img src="../IMAGE/Entrar.png" alt="Imagem 1">
-                </div>
-            </div>
-        </div>
-        
-    </section>
-    
-    
-    
-    
-<br>
-
-
-
-
-<section class="sub">
-    <div class="container">
-        <div id="newsGrid" class="grid">
-            <!-- Os cards das notícias serão adicionados dinamicamente aqui -->
-        </div>
-    </div>
 </section>
 
-<style>
-    /* CSS permanece o mesmo */
-</style>
+      
+    
+<div class="container">
+    <!-- Notícias à esquerda -->
+    <section class="section-sub news-container">
+        <div id="newsWrapper" class="news-grid">
+            <script>
+                const apiKey = '589a06c36a5c4d59d0e6fd507dd558e4';
+                const url = `https://gnews.io/api/v4/search?q=meio%20ambiente&lang=pt&token=${apiKey}`;
+            
+                async function fetchNews() {
+                    try {
+                        const response = await fetch(url);
+                        const data = await response.json();
+            
+                        if (data.articles && data.articles.length > 0) {
+                            const newsWrapper = document.getElementById('newsWrapper');
+                            newsWrapper.innerHTML = '';
+            
+                            const recentArticles = data.articles
+                                .sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt))
+                                .slice(0, 3);
+            
+                            recentArticles.forEach(article => {
+                                const newsCard = document.createElement('div');
+                                newsCard.className = 'news-card';
+            
+                                newsCard.innerHTML = `
+                                    <a href="${article.url}" target="_blank">
+                                        <img src="${article.image}" alt="${article.title}">
+                                    </a>
+                                    <div class="news-content">
+                                        <p class="news-category">${article.source.name} | ${new Date(article.publishedAt).toLocaleDateString()}</p>
+                                        <h2>${article.title}</h2>
+                                        <p class="news-description">${article.description}</p>
+                                    </div>
+                                    <div class="news-footer">
+                                        <span>COMPARTILHE</span>
+                                        <div class="social-icons">
+                                            <i class="fab fa-facebook-f"></i>
+                                            <i class="fab fa-twitter"></i>
+                                        </div>
+                                    </div>
+                                `;
+            
+                                newsWrapper.appendChild(newsCard);
+                            });
+                        } else {
+                            console.error("Nenhum artigo encontrado.");
+                        }
+                    } catch (error) {
+                        console.error("Erro ao buscar notícias:", error);
+                    }
+                }
+            
+                fetchNews();
+            </script>
+        </div>
+    </section>
 
-<script>
-    const apiKey = '589a06c36a5c4d59d0e6fd507dd558e4';
-    const url = `https://gnews.io/api/v4/search?q=meio%20ambiente&lang=pt&token=${apiKey}`;
-
-    async function fetchNews() {
-        try {
-            const response = await fetch(url);
-            const data = await response.json();
-
-            // Verifica se há artigos na resposta
-            if (data.articles && data.articles.length > 0) {
-                const newsGrid = document.getElementById('newsGrid');
-                
-                newsGrid.innerHTML = '';
-
-                // Ordena as notícias por data (mais recentes primeiro) e seleciona as 5 primeiras
-                const recentArticles = data.articles
-                    .sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt))
-                    .slice(0, 5);
-
-                // Renderiza as 5 notícias mais recentes
-                recentArticles.forEach(article => {
-                    const newsCard = document.createElement('div');
-                    newsCard.className = 'card';
-                    
-                    newsCard.innerHTML = `
-                        <a href="${article.url}" target="_blank">
-                            <img src="${article.image}" alt="${article.title}">
-                        </a>
-                        <div class="content">
-                            <p class="category blue">${article.source.name} | ${new Date(article.publishedAt).toLocaleDateString()}</p>
-                            <h2>${article.title}</h2>
-                            <p class="description">${article.description}</p>
+    <!-- Clima à direita -->
+    <div class="clima-container">
+        <div id="clima">
+            <form id="search">
+                <i class="fa-solid fa-location-dot"></i>
+                <input 
+                    type="search" 
+                    name="city_name" 
+                    id="city_name" 
+                    placeholder="Buscar cidade"
+                >
+                <button type="submit">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </form>
+    
+            <div id="weather">
+                <h1 id="title">Rolante, BR</h1>
+    
+                <div id="infos">
+                    <div id="temp">
+                        <img id="temp_img" src="http://openweathermap.org/img/wn/04d@2x.png" alt="">
+                        
+                        <div>
+                            <p id="temp_value">
+                                32 
+                            </p>
+                            <p id="temp_description">
+                                Ensolarado
+                            </p>
                         </div>
-                        <div class="footer">
-                            <span>COMPARTILHE</span>
-                            <div class="icons">
-                                <i class="fab fa-facebook-f"></i>
-                                <i class="fab fa-twitter"></i>
+                    </div>
+    
+                    <div id="other_infos">
+                        <div class="info">
+                            <i id="temp_max_icon" class="fa-solid fa-temperature-high"></i>
+    
+                            <div>
+                                <h2>Temp. max</h2>
+    
+                                <p id="temp_max">
+                                    32 <sup>C°</sup>
+                                </p>
                             </div>
                         </div>
-                    `;
-
-                    newsGrid.appendChild(newsCard);
-                });
-            } else {
-                console.error("Nenhum artigo encontrado.");
-            }
-        } catch (error) {
-            console.error("Erro ao buscar notícias:", error);
-        }
-    }
-
-    fetchNews();
-</script>
-
-
     
+                        <div class="info">
+                            <i id="temp_min_icon" class="fa-solid fa-temperature-low"></i>
+    
+                            <div>
+                                <h2>Temp. min</h2>
+    
+                                <p id="temp_min">
+                                    12 <sup>C°</sup>
+                                </p>
+                            </div>
+                        </div>
+    
+                        <div class="info">
+                            <i id="humidity_icon" class="fa-solid fa-droplet"></i>
+    
+                            <div>
+                                <h2>Humidade</h2>
+    
+                                <p id="humidity">
+                                    50%
+                                </p>
+                            </div>
+                        </div>
+    
+                        <div class="info">
+                            <i id="wind_icon" class="fa-solid fa-wind"></i>
+    
+                            <div>
+                                <h2>Vento</h2>
+    
+                                <p id="wind">
+                                    50 km/h
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div id="alert"></div>
+    </div>
+    <script src="../JAVASCRIPT/clima.js"></script>
+</div>
+
+
     
 
 
