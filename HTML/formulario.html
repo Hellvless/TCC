@@ -75,42 +75,46 @@
     });
 </script>
 
-  <div class="container">
-    <section class="header">
-      <h2>Formulário de Consumo</h2>
-    </section>
+<div class="container">
+  <section class="header">
+    <h2>Formulário de Consumo</h2>
+  </section>
 
-    <form id="form" class="form" action="formulario1.html" method="POST">
-      <div class="form-content">
-        <label for="kwh">Quantos KWh você consome mensalmente?</label>
-        <input type="number" min="0" id="kwh" name="kwh" placeholder="Digite o consumo em KWh" required />
+  <form id="form" class="form" action="formulario1.html" method="POST">
+    <div class="form-content">
+      <label for="kwh">Quantos KWh você consome mensalmente?</label>
+      <input type="number" min="0" id="kwh" name="kwh" placeholder="Digite o consumo em KWh" required />
+    
+    </div>
+
+    <div class="form-content">
+      <label for="roupas-ano">Quantas vezes por ano você compra roupas?</label>
+      <input type="number" min="0" id="roupas-ano" name="roupas-ano" placeholder="Estimativa anual de compras" required />
+     
+    </div>
+
+ 
+    <div class="form-content">
+      <label for="pecas-media">Em média, quantas peças você compra por vez?</label>
+      <input type="number"  min="0" id="pecas-media" name="pecas-media" placeholder="Estimativa média por compra" required />
+      </div>
+
+    <div class="form-content">
+      <label for="veiculo-usado">Qual tipo de veículo você usualmente utiliza no seu dia-a-dia?</label>
+      <select id="veiculo-usado" name="veiculo-usado" required>
+        <option value="" disabled selected>Selecione uma opçãoㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ</option>
+        <option value="carro-gasolina">Carro (Gasolina/Etanol)</option>
+        <option value="carro-diesel">Carro (Diesel)</option>
+        <option value="carro-eletrico">Carro (Elétrico)</option>
+        <option value="moto-gasolina">Moto (Gasolina/Etanol)</option>
+        <option value="outro-veiculo">Outro veículo</option>
+      </select>
       
-      </div>
-
-      <div class="form-content">
-        <label for="roupas-ano">Quantas vezes por ano você compra roupas?</label>
-        <input type="number" min="0" id="roupas-ano" name="roupas-ano" placeholder="Estimativa anual de compras" required />
-       
-      </div>
-
-   
-      <div class="form-content">
-        <label for="pecas-media">Em média, quantas peças você compra por vez?</label>
-        <input type="number"  min="0" id="pecas-media" name="pecas-media" placeholder="Estimativa média por compra" required />
-        </div>
-
-      <div class="form-content">
-        <label for="fuel-consumption">Quantos litros de combustível você consome mensalmente para cada tipo de veículo?</label>
-        <select id="fuel-consumption" name="fuel-consumption" required>
-          <option value="" disabled selected>Selecione uma opçãoㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ</option>
-          <option value="carro-gasolina">Carro (Gasolina/Etanol)</option>
-          <option value="carro-diesel">Carro (Diesel)</option>
-          <option value="moto-gasolina">Moto (Gasolina/Etanol)</option>
-          <option value="outro-veiculo">Outro veículo</option>
-        </select>
-        
-      </div>
-      <button type="button" onclick="redirect()">continuar</button>
+    </div>
+    <button type="button" onclick="redirect1(), salvarDados()">continuar</button>
+  <br>
+  </form>
+</div>
     </form>
   </div>
   <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
