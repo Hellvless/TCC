@@ -57,9 +57,6 @@ function verificarEmail() {
         // Se o e-mail existe, o usuário foi encontrado
          
         console.log(email);
-        escreverMensagemEmVermelho(
-          "Usuário encontrado! Você pode prosseguir com a recuperação de senha."
-        );
         // Aqui você pode chamar a função para enviar o e-mail de recuperação, se necessário
         EnviarEmail(email);
       } else {
