@@ -17,16 +17,18 @@ const firebaseConfig = {
   const auth = getAuth();
 
   function logOut(){
-    signOut(auth).then(()=>{
+    signOut(auth).then(auth, (user)=>{
         window.location.href="novo.html";
     }).catch((error)=>{
         alert("Erro ao fazer logout!", error);
     })
 
-    onAuthStateChanged(auth, user =>{
+    onAuthStateChanged(auth).then(auth, (user) =>{
         if(!user){
             window.location.href="novo.html"
         }
+    }).catch((error)=>{
+      console.log("Deu erro aqui ó:", error);
     })
 
   }
