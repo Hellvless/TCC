@@ -101,22 +101,23 @@
 
     <div class="form-content">
       <label for="veiculo-usado">Qual tipo de veículo você usualmente utiliza no seu dia-a-dia?</label>
-      <select id="veiculo-usado" name="veiculo-usado" required>
+      <select id="veiculo-usado" name="veiculo-usado" onchange="mostrarInputOutro()" required>
         <option value="" disabled selected>Selecione uma opçãoㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ</option>
-        <option value="carro-gasolina">Carro (Gasolina/Etanol)</option>
-        <option value="carro-diesel">Carro (Diesel)</option>
-        <option value="carro-eletrico">Carro (Elétrico)</option>
-        <option value="moto-gasolina">Moto (Gasolina/Etanol)</option>
+        <option value="gasolina">Carro (Gasolina/Etanol)</option>
+        <option value="diesel">Carro (Diesel)</option>
+        <option value="eletrico">Carro (Elétrico)</option>
+        <option value="moto">Moto (Gasolina/Etanol)</option>
         <option value="outro-veiculo">Outro veículo</option>
       </select>
-      
     </div>
-    <button type="button" onclick="redirect1(), salvarDados()">continuar</button>
+    <div class="form-content" id="campoOutro" style="display: none;">
+      <label for="outroInput">Especifique:</label>
+      <input type="text" id="outroInput" name="outroInput" placeholder="Outro Veículo">
+  </div>
+    <button type="button" onclick="nextPage()">Continuar</button>
   <br>
   </form>
 </div>
-    </form>
-  </div>
   <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
   <script>
     new window.VLibras.Widget('https://vlibras.gov.br/app');
