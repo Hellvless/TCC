@@ -66,6 +66,31 @@ window.nextPage1 = nextPage1;
           alert("Por favor, preencha todas as respostas.");
           return;
         }
+        
+        sessionStorage.getItem('kwh');
+        sessionStorage.getItem('roupasAno');
+        sessionStorage.getItem('pecasMedia');
+        sessionStorage.getItem('veiculoUsado');
+
+
+        sessionStorage.getItem("transportePublico");
+        sessionStorage.getItem("consumoCarne");
+        sessionStorage.getItem("voos");
+        sessionStorage.getItem("agua");
+
+        let kwh = sessionStorage.getItem('kwh') || 0; 
+    let roupasAno = sessionStorage.getItem('roupasAno') || 0;
+    let pecasMedia = sessionStorage.getItem('pecasMedia') || 0;
+    let veiculoUsado = sessionStorage.getItem('veiculoUsado') || 'outro-veiculo';
+    let transportePublicoResposta = sessionStorage.getItem("transportePublico") || 'default';
+    let carneResposta = sessionStorage.getItem("consumoCarne") || 'default';
+    let voosResposta = sessionStorage.getItem("voos") || 0; 
+    let aguaResposta = sessionStorage.getItem("agua") || 0;
+
+
+
+
+
         // Constantes para emissões médias
         const EMISSAO_KWH = 0.27; // kg CO₂ por KWh (emissão média de eletricidade)
         const EMISSAO_ROUPAS = 4.5; // kg CO₂ por peça de roupa
@@ -232,10 +257,17 @@ window.nextPage1 = nextPage1;
             break;
         }
       
-    
+
         // Cálculo total das emissões mensais
         let emissaoTotal = emissaoKwh + emissaoRoupas + emissaoVeiculo;
+
+        let totalEmissoes = emissaoKwh + emissaoRoupas + emissaoVeiculo + emissaoTransportePublico + emissaoCarne + emissaoVoos + emissaoAgua;
+
+    // Exibir o resultado
+    alert("Emissões totais mensais de CO₂: " + totalEmissoes.toFixed(2) + " kg CO₂/mes");
+
+    // Opcional: Exibir no console ou em algum lugar na página
+    console.log("Emissões totais mensais de CO₂:", totalEmissoes.toFixed(2) + " kg CO₂/mes");
     
-        // Exibir o resultado
-        document.getElementById('resultado-val').textContent = `${emissaoTotal.toFixed(2)} kg CO₂/mês`;
       }
+      window.calcularEmissoes = calcularEmissoes
