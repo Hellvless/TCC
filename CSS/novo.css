@@ -205,8 +205,8 @@ cursor: pointer;
     display: flex;
     align-items: center;
     max-width: 100%;
-    margin: auto;
     background-color: #000000;
+    padding: 10px 200px;
   }
   .text h1{
     color: #ffffff;
@@ -220,14 +220,14 @@ cursor: pointer;
     color:rgb(255, 255, 255);
   }
   .text a{
-    text-decoration: none; /* Remove a linha embaixo */
-  display: inline-block; /* Permite estilizar como um botão */
-  padding: 7px 10px; /* Espaçamento interno */
-  background-color: white; /* Cor de fundo padrão */
-  color: #000000; /* Cor do texto */
-  border-radius: 5px; /* Bordas arredondadas */
-  transition: background-color 0.3s; /* Suaviza a transição de cor */
-  border: 2px solid #ffffff; /* Borda para destacar */
+    text-decoration: none;
+  display: inline-block;
+  padding: 7px 10px;
+  background-color: white;
+  color: #000000; 
+  border-radius: 5px; 
+  transition: background-color 0.3s;
+  border: 2px solid #ffffff; 
   }
 
   .text a:hover {
@@ -241,7 +241,7 @@ cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 300px;
+    max-width: 500px;
     overflow: hidden;
    
   }
@@ -262,6 +262,8 @@ cursor: pointer;
     vertical-align: middle;
     color: white;
   }
+
+
 
 
 

@@ -1,0 +1,359 @@
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: flex;
+    background-color:#eff2e4 ;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #8ba96e;
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    background-color: rgb(16, 8, 8);
+    padding: 5px;
+    border-radius: 5px;
+    position: relative;
+    width: 120px;
+    text-decoration: none;
+}
+.logo img {
+  max-width: 100px;  /* Limita a largura máxima da imagem */
+  max-height: 40px;  /* Limita a altura máxima da imagem */
+  width: auto;  /* Ajusta a largura automaticamente */
+  height: auto;  /* Ajusta a altura automaticamente */
+}
+
+.btn-overlay {
+  text-decoration: none; /* Remove o sublinhado do link */
+  color: white;           /* Define a cor do texto do link */
+  font-size: 16px;       /* Define o tamanho da fonte */
+  padding: 10px;     /* Adiciona um pouco de espaço interno */
+  border: 1px solid #000; /* Adiciona uma borda ao redor do link */
+  border-radius: 4px;
+}
+
+.nav-items {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    color: rgb(1, 1, 1);
+    margin-right: 20px;
+}
+
+.nav-item a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 7px 10px;
+    background-color: white;
+    color: #000000;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    border: 2px solid #ffffff;
+}
+
+.nav-item a:hover {
+    background-color: #000000;
+    color: white;
+}
+
+.nav-item i {
+    margin-right: 5px;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.right-items {
+    display: flex;
+    align-items: center;
+}
+
+.upgrade-button {
+    text-decoration: none;
+    display: inline-block;
+    padding: 7px 10px;
+    background-color: white;
+    color: #000000;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    border: 2px solid #ffffff;
+}
+
+.upgrade-button a:hover {
+    background-color: #000000;
+    color: white;
+}
+
+.avatar {
+    padding: 5px;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+
+.icon-large {
+    font-size: 2rem; /* Aumente o tamanho conforme necessário */
+    color: #000; /* Altere a cor se desejar */
+}
+
+
+/* de clicar no icone */
+.dropdown-menu {
+  display: none; /* Inicialmente escondido */
+  position: absolute; /* Posiciona o menu em relação ao seu elemento pai */
+  background-color: white; /* Cor de fundo do menu */
+  border: 3px solid #ccc; /* Borda para o menu */
+  border-radius: 5px; /* Bordas arredondadas */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+  list-style-type: none; /* Remove os marcadores da lista */
+  right: 3px;
+  padding: 0; /* Remove o preenchimento padrão */
+  margin: 0; /* Remove a margem padrão */
+  z-index: 1000; /* Garante que o menu apareça acima de outros elementos */
+}
+
+.dropdown-menu li {
+  padding: 10px; /* Espaçamento interno dos itens do menu */
+}
+
+.dropdown-menu li a {
+  text-decoration: none; /* Remove a linha embaixo */
+  color: #000; /* Cor do texto */
+  display: block; /* Faz o link ocupar toda a área do item */
+}
+
+.dropdown-menu li a:hover {
+  background-color: #f0f0f0; /* Cor de fundo ao passar o mouse */
+}
+#user-icon{
+cursor: pointer;
+}
+
+
+
+/* Container for Plans */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    margin-top: 40px;
+    margin-left: 20px;
+}
+
+/* Plan Card */
+.plan {
+    background-color: #8ba96e;
+    margin-left: 20px;
+    border-radius: 35px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+}
+
+.plan h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: white;
+}
+.plan h3{
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    background: linear-gradient(to right,white, rgb(239, 221, 21));
+}
+
+.plan .price {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #6b46c1;
+}
+
+.plan .price span {
+    font-size: 1rem;
+    color: #666;
+}
+
+.plan p {
+    color: #555;
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.plan .icon {
+    font-size: 3rem;
+    color: #6b46c1;
+    margin-bottom: 20px;
+}
+
+.plan ul {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+.plan li {
+    font-size: 1rem;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+.plan .check {
+    color: #000000;
+    
+}
+
+.plan .times {
+    color: #f56565;
+}
+
+.plan a {
+    background-color: #6b46c1;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.plan a:hover {
+    background-color: #553c9a;
+}
+
+/* Step 3 Title */
+.text-red-500 {
+    color: #f56565;
+}
+
+.text-3xl {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* Payment Methods Section */
+.flex {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.bg-gray-800 {
+    background-color: #2d3748;
+}
+
+.p-4 {
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.rounded-lg {
+    border-radius: 10px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-green-500 {
+    color: #48bb78;
+}
+
+.text-sm {
+    font-size: 0.875rem;
+}
+
+.text-gray-400 {
+    color: #e2e8f0;
+}
+
+.bg-gray-900 {
+    background-color: #1a202c;
+}
+
+.bg-red-900 {
+    background-color: #b83232;
+}
+
+.text-white {
+    color: #fff;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.mt-2 {
+    margin-top: 0.5rem;
+}
+
+.mt-4 {
+    margin-top: 1rem;
+}
+
+.mt-6 {
+    margin-top: 1.5rem;
+}
+
+/* Cart Summary Section */
+.bg-red-900 {
+    background-color: #9b2c2c;
+}
+
+.text-green-500 {
+    color: #48bb78;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.font-bold {
+    font-weight: bold;
+}
+
+.text-xl {
+    font-size: 1.25rem;
+}
+
+.text-lg {
+    font-size: 1.125rem;
+}
+
+/* Footer for Payment Links */
+.text-gray-400 {
+    color: #e2e8f0;
+}

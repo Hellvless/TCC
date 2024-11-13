@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <script type="module" src="../JAVASCRIPT/login.js"></script>
+    <script type="module" src="../JAVASCRIPT/esqueceu.js"></script>
     <div id="fundo">
         <div class="content-box">
             <div class="form-box">
@@ -20,10 +20,11 @@
                     <div class="input-box">
                         <input type="email"  autocapitalize="none" autocomplete="username" autocorrect="off" id="email" placeholder="E-mail, número de celular ou nome de usuário">
                     </div>
-                  
-        <form action="../HTML/codidodgmail.html"><button onclick="window.location.href='codidodgmail.html'" type="submit" id="Enviar">Enviar Código de Recuperação</button></form>
-                    
-        <a href="../HTML/login.html" class="back-btn">Voltar</a>
+
+                    <button onclick="verificarEmail()" type="submit" id="Enviar">Enviar Código de Recuperação</button>
+                    <br>
+                    <br><br><br>
+                    <a href="../HTML/login.html" class="back-btn">Voltar</a>
         </div>
     </div>
     <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
