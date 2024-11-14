@@ -42,7 +42,9 @@ function mostrarInputOutro() {
     alert("Por favor, preencha todas as respostas.");
     return;
   }
-  
+  function nextPage2() {
+    
+  }
 
   
 
