@@ -3,7 +3,13 @@ import {
   onAuthStateChanged,
   signOut
 } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
+
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+
+import {
+  getDatabase
+} from "https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js";
+import { isLoggedIn, registerObserver } from "./authState.js";
 const firebaseConfig = {
   apiKey: "AIzaSyCEh1zVhU1AG4tcV3yQMXQlGmNG9hWho1E",
   authDomain: "tcc---ecoprint.firebaseapp.com",
@@ -13,42 +19,64 @@ const firebaseConfig = {
   appId: "1:387347125569:web:a994b4d23b5b1feaeefdc0",
   measurementId: "G-84J579LFKS",
 };
+
 const app = initializeApp(firebaseConfig);
 const auth = getAuth();
+const db = getDatabase();
 const logoutButton = document.getElementById("button");
 const loginButton = document.getElementById("login");
 const cadastroButton = document.getElementById("cadastro");
 
+console.log("Auth:", auth); // Verifique se `auth` está inicializado corretamente
+console.log("Database:", db); // Verifique se `database` está inicializado corretamente
+
 // Função para monitorar o estado de autenticação
+function checkInitialLoginStatus() {
+  if (isLoggedIn()) {
+      console.log("Usuário está logado (estado inicial)");
+      // Lógica para quando o usuário está logado
+  } else {
+      console.log("Usuário não está logado (estado inicial)");
+      // Lógica para quando o usuário não está logado
+  }
+}
+
+document.addEventListener("DOMContentLoaded", checkInitialLoginStatus);
+
 function monitorAuthState() {
-  onAuthStateChanged(auth, (user) => {
-    if (user) {
+  console.log("Verificando estado de autenticação");
+ 
+    onAuthStateChanged(auth, (user) => {
       // Usuário está logado - exibe o botão de logout
-      logoutButton.hidden = true;
-      loginButton.hidden = false;
-      cadastroButton.hidden = false;
+       if (user) {
+      logoutButton.style.display = "block"
+      loginButton.style.display = "none"
+      cadastroButton.style.display = "none"
       console.log("Usuário autenticado:", user.email);
+    
       } else {
       // Redireciona para a página de login se o usuário não estiver autenticado
-      logoutButton.hidden = false;
-      loginButton.hidden = true;
-      cadastroButton.hidden = true;
+      logoutButton.style.display = "none"
+      loginButton.style.display = "block"
+      cadastroButton.style.display = "block"
       console.log("Usuário não autenticado");
-      window.location.href = "login.html";
+      // window.location.href = "novo.html";
     }
   });
 }
-window.monitorAuthState = monitorAuthState;
 monitorAuthState();
 
-function logOut() {
+
+function logOut(){
   signOut(auth)
-    .then(() => {
-      console.log("Usuário deslogado");
-      window.location.href = "login.html";  // Redireciona para a tela inicial
-    })
-    .catch((error) => {
-      console.error("Erro ao sair:", error);
-    });
+        .then(() => {
+            // Redirecionar para a tela inicial após o logout
+            window.location.href = "novo.html";
+        })
+        .catch((error) => {
+            console.error("Erro ao sair:", error);
+        });
+
+
 }
 window.logOut = logOut;

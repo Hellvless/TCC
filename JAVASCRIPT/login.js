@@ -1,5 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
 import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
+import { setUserLoggedIn } from "./authState.js"; // Importa a função para atualizar o estado de login
 
 const firebaseConfig = {
   apiKey: "AIzaSyCEh1zVhU1AG4tcV3yQMXQlGmNG9hWho1E",
@@ -60,6 +61,7 @@ function login(event) {
       const user = userCredential.user;
       console.log("Usuário logado:", user);
       alert("Login realizado com sucesso!");
+      setUserLoggedIn(true); // Define o estado como logado
       window.location.href = "novo.html";
     })
     .catch((error) => {
