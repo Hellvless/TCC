@@ -16,19 +16,23 @@ const firebaseConfig = {
   const app = initializeApp(firebaseConfig);
   const auth = getAuth();
 
+  // Função para monitorar o estado de autenticação
+function monitorAuthState() {
+  onAuthStateChanged(auth, (user) => {
+      if (user) {
+          console.log("Usuário autenticado:", user.email);
+      } else {
+          // Redireciona para a página de login se o usuário não estiver autenticado
+          window.location.href = "login.html";
+      }
+  });
+}
+
   function logOut(){
     signOut(auth).then(auth, (user)=>{
         window.location.href="novo.html";
     }).catch((error)=>{
         alert("Erro ao fazer logout!", error);
-    })
-
-    onAuthStateChanged(auth).then(auth, (user) =>{
-        if(!user){
-            window.location.href="novo.html"
-        }
-    }).catch((error)=>{
-      console.log("Deu erro aqui ó:", error);
     })
 
   }
