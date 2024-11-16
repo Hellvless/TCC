@@ -175,7 +175,19 @@
     color: #FFF;
   }
   
+
+
   .Chart{
     margin-bottom: 15px;
     margin-right: 5px;
   }
+
+  #resultados {
+    display: flex;
+    justify-content: center;  /* Centraliza horizontalmente */
+    align-items: center;      /* Centraliza verticalmente */
+    margin-bottom: 10px;
+}
+
+
+
