@@ -42,9 +42,7 @@ function mostrarInputOutro() {
     alert("Por favor, preencha todas as respostas.");
     return;
   }
-  function nextPage2() {
-    
-  }
+  
 
   
 
@@ -58,29 +56,42 @@ function mostrarInputOutro() {
 
 }
 window.nextPage1 = nextPage1;
+function nextPage2() {
+  const AlimentoResposta = document.getElementById("alimento-organico").value;
+  const ReciclaResposta = document.getElementById("recicla").value;
+
+  if (!AlimentoResposta || !ReciclaResposta) {
+    alert("Por favor, preencha todas as respostas.");
+    return;
+  }
+  
+
+  
+
+  sessionStorage.setItem("AlimentoEmissao", AlimentoResposta);
+  sessionStorage.setItem("ReciclaEmissao", ReciclaResposta);
+  
+  // Redireciona para a página de resultado
+  window.location.href = 'formularioresultado.html'; 
+}
+window.nextPage2 = nextPage2;
+
 
       function calcularEmissoes() {
 
-        const AlimentoResposta = document.getElementById("alimento-organico").value;
-        const ReciclaResposta = document.getElementById("recicla").value;
-
-        if (!AlimentoResposta || !ReciclaResposta) {
-          alert("Por favor, preencha todas as respostas.");
-          return;
-        }
         
         sessionStorage.getItem('kwh');
         sessionStorage.getItem('roupasAno');
         sessionStorage.getItem('pecasMedia');
         sessionStorage.getItem('veiculoUsado');
-
-
         sessionStorage.getItem("transportePublico");
         sessionStorage.getItem("consumoCarne");
         sessionStorage.getItem("voos");
         sessionStorage.getItem("agua");
+        sessionStorage.getItem("AlimentoEmissao");
+        sessionStorage.getItem("ReciclaEmissao");
 
-        let kwh = sessionStorage.getItem('kwh') || 0; 
+    let kwh = sessionStorage.getItem('kwh') || 0; 
     let roupasAno = sessionStorage.getItem('roupasAno') || 0;
     let pecasMedia = sessionStorage.getItem('pecasMedia') || 0;
     let veiculoUsado = sessionStorage.getItem('veiculoUsado') || 'outro-veiculo';
@@ -88,6 +99,8 @@ window.nextPage1 = nextPage1;
     let carneResposta = sessionStorage.getItem("consumoCarne") || 'default';
     let voosResposta = sessionStorage.getItem("voos") || 0; 
     let aguaResposta = sessionStorage.getItem("agua") || 0;
+    let alimentoOrganicoResposta = sessionStorage.getItem("AlimentoEmissao") || 'default';
+    let reciclaResposta = sessionStorage.getItem("ReciclaEmissao") || 'default';
 
 
 
@@ -140,6 +153,24 @@ window.nextPage1 = nextPage1;
           'default': 0
         };
 
+         // Novas constantes para as questões adicionais
+        const EMISSAO_ALIMENTO_ORGANICO = {
+          'varias-vezes-ao-dia': 0.5, // Consumo diário de alimentos orgânicos
+          'uma-ou-duas-vezes': 0.3, // Consumo regular de alimentos orgânicos
+          'tres-a-cinco': 0.2, // Consumo ocasional
+          'mensalmente': 0.1, // Consumo mensal
+          'raramente': 0.05, // Consumo raro
+          'nunca': 0, // Não consome alimentos orgânicos
+          'default': 0
+      };
+
+      const EMISSAO_RECICLA = {
+          'varias-vezes-ao-dia': 0.05, // Recicla sempre
+          'uma-ou-duas-vezes': 0.03, // Recicla algumas vezes
+          'tres-a-cinco': 0.02, // Recicla raramente
+          'default': 0
+      };
+
 
     
         // Emissões para o consumo de KWh
@@ -170,6 +201,8 @@ window.nextPage1 = nextPage1;
         let emissaoCarne = 0;
         let emissaoVoos = 0;
         let emissaoAgua = 0;
+        let emissaoAlimentoOrganico = 0;
+        let emissaoRecicla = 0;
       
         // Calcular as emissões para transporte público
         switch (transportePublicoResposta) {
@@ -258,18 +291,117 @@ window.nextPage1 = nextPage1;
             emissaoAgua = 0;
             break;
         }
+
+        switch (alimentoOrganicoResposta) {
+          case "varias-vezes-ao-dia":
+            emissaoAlimentoOrganico = 0.5;
+            break;
+          case "uma-ou-duas-vezes":
+            emissaoAlimentoOrganico = 0.3;
+            break;
+          case "tres-a-cinco":
+            emissaoAlimentoOrganico = 0.2;
+            break;
+          case "mensalmente":
+            emissaoAlimentoOrganico = 0.1;
+            break;
+          case "raramente":
+            emissaoAlimentoOrganico = 0.05;
+            break;
+          case "nunca":
+            emissaoAlimentoOrganico = 0;
+            break;
+          default:
+            emissaoAlimentoOrganico = 0;
+            break;
+        }
+
+        switch (reciclaResposta) {
+          case "varias-vezes-ao-dia":
+          emissaoRecicla = 0.05;
+            break;
+          case "uma-ou-duas-vezes":
+          emissaoRecicla = 0.03;
+            break;
+          case "tres-a-cinco":
+            emissaoRecicla = 0.02;
+            break;
+          default:
+            emissaoRecicla = 0;
+            break
+        }
       
+      
+        let emissoes = [
+          { name: 'KWh', value: emissaoKwh },
+          { name: 'Roupas', value: emissaoRoupas },
+          { name: 'Veículo', value: emissaoVeiculo },
+          { name: 'Transporte Público', value: emissaoTransportePublico },
+          { name: 'Consumo de Carne', value: emissaoCarne },
+          { name: 'Voos', value: emissaoVoos },
+          { name: 'Água', value: emissaoAgua },
+          { name: 'Alimentos Orgânicos', value: emissaoAlimentoOrganico },
+          { name: 'Reciclagem', value: emissaoRecicla }
+      ];
 
-        // Cálculo total das emissões mensais
-        let emissaoTotal = emissaoKwh + emissaoRoupas + emissaoVeiculo;
+      emissoes.sort((a, b) => b.value - a.value); // Ordenar em ordem decrescente
 
-        let totalEmissoes = emissaoKwh + emissaoRoupas + emissaoVeiculo + emissaoTransportePublico + emissaoCarne + emissaoVoos + emissaoAgua;
+        // Cálculo total das emissões mensais;
+
+        let totalEmissoes = emissaoKwh + emissaoRoupas + emissaoVeiculo + emissaoTransportePublico + emissaoCarne + emissaoVoos + emissaoAgua + emissaoAlimentoOrganico + emissaoRecicla;
 
     // Exibir o resultado
-    alert("Emissões totais mensais de CO₂: " + totalEmissoes.toFixed(2) + " kg CO₂/mes");
+    let resultadosHTML = `<h2>Total de Emissões de CO₂: ${totalEmissoes.toFixed(2)} kg CO₂/ano</h2>`;
+            document.getElementById("resultados").innerHTML = resultadosHTML;
+             // Exibir os 4 maiores valores
+             let topContribuicoesHTML = '';
+             for (let i = 0; i < 4; i++) {
+                 topContribuicoesHTML += `
+                     <div class="contribuicao-item">
+                         <span>${emissoes[i].name}: </span>${emissoes[i].value.toFixed(2)} kg CO₂
+                     </div>`;
+             }
+             document.getElementById("top-contribuicoes-list").innerHTML = topContribuicoesHTML;
+
+
+             // Gráfico com Chart.js
+            let ctx = document.getElementById('emissoesChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: emissoes.map(e => e.name),
+                    datasets: [{
+                        label: 'Emissões de CO₂ (kg)',
+                        data: emissoes.map(e => e.value),
+                        backgroundColor: '#4e73df',
+                        borderColor: '#4e73df',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                stepSize: 5
+                            }
+                        }
+                    }
+                }
+            });
 
     // Opcional: Exibir no console ou em algum lugar na página
     console.log("Emissões totais mensais de CO₂:", totalEmissoes.toFixed(2) + " kg CO₂/mes");
     
       }
-      window.calcularEmissoes = calcularEmissoes
+
+      function funcaoEspecifica() {
+        console.log('Função chamada no HTML 1');
+    }
+    
+    // Verificando o caminho da URL
+    if (window.location.pathname.includes('formularioresultado.html')) {
+        calcularEmissoes(); // Chama a função somente se estiver em "index.html"
+    }
+
+      window.calcularEmissoes = calcularEmissoes;

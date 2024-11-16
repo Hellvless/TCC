@@ -85,7 +85,7 @@
     <!-- Frequência de uso de transporte público -->
     <div class="form-content">
       <label for="alimento-organico">Você consome alimentos orgânicos?</label>
-      <select id="alimento-organico" name="alimento-organico">
+      <select id="alimento-organico" name="alimento-organico" required>
         <option value="" disabled selected>Selecione uma opção</option>
         <option value="varias-vezes-ao-dia">Sim, em todas as refeições(Impacto ambiental muito reduzido, alta sustentabilidade)</option>
         <option value="uma-ou-duas-vezes"> Sim, regularmente (Impacto reduzido,
@@ -102,7 +102,7 @@
       <label for="recicla">Quantas vezes por mês você recicla ou reutiliza produtos?
 
       </label>
-      <select id="recicla" name="recicla">
+      <select id="recicla" name="recicla" required>
         <option value="" disabled selected>Selecione uma opçãoㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ</option>
         <option value="varias-vezes-ao-dia"> Sempre (Impacto ambiental muito reduzido)</option>
         <option value="uma-ou-duas-vezes">  Algumas vezes (Impacto ambiental reduzido)</option>
@@ -112,7 +112,7 @@
     </div>
 
 
-    <button onclick="calcularEmissoes()" type="button">continuar</button>
+    <button type="button" onclick="nextPage2()">continuar</button>
   </form>
 </div>
   <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
