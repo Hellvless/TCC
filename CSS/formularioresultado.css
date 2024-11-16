@@ -164,83 +164,18 @@
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1); /* Efeito de sombra suavizado */
     overflow: hidden;
     margin-top: 50px;
-    height: 250px;
-    max-height: 50%;
+
+
   }
   
   .header {
-    background-color: #0fb633a2;
+    background-color: #8ba96e;
     padding: 24px;
     text-align: center;
     color: #FFF;
   }
   
-  .form {
-    padding: 18px;
+  .Chart{
+    margin-bottom: 15px;
+    margin-right: 5px;
   }
-  
-  .form-content {
-    margin-bottom: 8px;
-    padding-bottom: 18px;
-    position: relative;
-  }
-  
-  .form-content label {
-    display: inline-block;
-    margin-bottom: 4px;
-  }
-  
-  .form-content input {
-    display: block;
-    width: 100%;
-    border-radius: 8px;
-    padding: 8px;
-    border: 2px solid #dfdfdf;
-  }
-  
-  .form button {
-    background-color: #0fb633a2;
-    color: #FFF;
-    width: 100%;
-    border-radius: 14px;
-    padding: 10px;
-    border: 0;
-    font-size: 16px;
-    cursor: pointer;
-    margin-top: 14px;
-  }
-  
-  .form-content.error input {
-    border-color: #ff3b25;
-  }
-  
-  .form-content.error a {
-    color: #ff3b25;
-    visibility: visible;
-  }
-  
-  .input-box select {
-    display: block;
-    width: 100%;
-    border-radius: 8px;
-    padding: 8px;
-    border: 2px solid #dfdfdf;
-  }
-  
-  /* Adiciona a seta personalizada */
-  .input-box {
-    position: relative;
-    margin-bottom: 8px;
-    
-  }
-  
-  .input-box select::after {
-    content: "▼";
-    font-size: 0.8rem;
-    position: absolute;
-    right: 1.2rem;
-    top: calc(50% - 0.5em);
-    pointer-events: none;
-    color: #000000c0;
-  }
-  

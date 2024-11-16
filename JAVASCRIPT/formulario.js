@@ -372,8 +372,32 @@ window.nextPage2 = nextPage2;
                     datasets: [{
                         label: 'Emissões de CO₂ (kg)',
                         data: emissoes.map(e => e.value),
-                        backgroundColor: '#4e73df',
-                        borderColor: '#4e73df',
+                       backgroundColor: emissoes.map(e => {
+                          // Aqui você pode definir as cores com base na categoria
+                          switch (e.name) {
+                            case 'KWh':
+                                return '#FF5733'; // Vermelho para KWh
+                            case 'Roupas':
+                                return '#FF8C00'; // Laranja para Roupas
+                            case 'Veículo':
+                                return '#28a745'; // Verde para Veículo
+                            case 'Transporte Público':
+                                return '#007bff'; // Azul para Transporte Público
+                            case 'Consumo de Carne':
+                                return '#dc3545'; // Vermelho intenso para Carne
+                            case 'Voos':
+                                return '#4e73df'; // Azul para Voos
+                            case 'Água':
+                                return '#17a2b8'; // Azul claro para Água
+                            case 'Alimentos Orgânicos':
+                                return '#28a745'; // Verde para Alimentos Orgânicos
+                            case 'Reciclagem':
+                                return '#6c757d'; // Cinza para Reciclagem
+                            default:
+                                return '#6f42c1'; // Roxo para qualquer outro caso não previsto
+                        }
+                    }),
+                        borderColor: '#8ba96e',
                         borderWidth: 1
                     }]
                 },
