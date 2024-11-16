@@ -351,7 +351,7 @@ window.nextPage2 = nextPage2;
         let totalEmissoes = emissaoKwh + emissaoRoupas + emissaoVeiculo + emissaoTransportePublico + emissaoCarne + emissaoVoos + emissaoAgua + emissaoAlimentoOrganico + emissaoRecicla;
 
     // Exibir o resultado
-    let resultadosHTML = `<h2>Total de Emissões de CO₂: ${totalEmissoes.toFixed(2)} kg CO₂/ano</h2>`;
+    let resultadosHTML = `<h2>Total de Emissões de CO₂: ${totalEmissoes.toFixed(2)} kg CO₂/Mês</h2>`;
             document.getElementById("resultados").innerHTML = resultadosHTML;
              // Exibir os 4 maiores valores
              let topContribuicoesHTML = '';
@@ -364,8 +364,7 @@ window.nextPage2 = nextPage2;
              document.getElementById("top-contribuicoes-list").innerHTML = topContribuicoesHTML;
 
 
-             // Gráfico com Chart.js
-            let ctx = document.getElementById('emissoesChart').getContext('2d');
+           let ctx = document.getElementById('emissoesChart').getContext('2d');
             new Chart(ctx, {
                 type: 'bar',
                 data: {
@@ -386,14 +385,29 @@ window.nextPage2 = nextPage2;
                                 stepSize: 5
                             }
                         }
+                    },
+                    plugins: {
+                        datalabels: {
+                            anchor: 'end',
+                            align: 'top',
+                            font: {
+                                weight: 'bold',
+                                size: 12
+                            },
+                            formatter: function(value) {
+                                return value.toFixed(2); // Mostrar as emissões com 2 casas decimais
+                            }
+                        }
                     }
-                }
+                },
+                plugins: [ChartDataLabels] // Certifique-se de que o plugin 'ChartDataLabels' esteja carregado
             });
-
-    // Opcional: Exibir no console ou em algum lugar na página
+             // Opcional: Exibir no console ou em algum lugar na página
     console.log("Emissões totais mensais de CO₂:", totalEmissoes.toFixed(2) + " kg CO₂/mes");
+        }
+
+   
     
-      }
 
       function funcaoEspecifica() {
         console.log('Função chamada no HTML 1');
@@ -405,3 +419,4 @@ window.nextPage2 = nextPage2;
     }
 
       window.calcularEmissoes = calcularEmissoes;
+  
