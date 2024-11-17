@@ -396,9 +396,8 @@ window.nextPage2 = nextPage2;
                             default:
                                 return '#6f42c1'; // Roxo para qualquer outro caso não previsto
                         }
-                    }),
-                        borderColor: '#8ba96e',
-                        borderWidth: 1
+                    })
+          
                     }]
                 },
                 options: {
