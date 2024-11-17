@@ -100,9 +100,17 @@ body {
     border: 2px solid #ffffff;
 }
 
-.upgrade-button a:hover {
+.upgrade-button:hover {
     background-color: #000000;
     color: white;
+}
+.login-button:hover {
+  background-color: #000000;
+  color: white;
+}
+.signin-button:hover {
+  background-color: #000000;
+  color: white;
 }
 
 .avatar {
