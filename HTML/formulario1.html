@@ -14,6 +14,8 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
 </head>
 <body>
+  <script type="module" src="../JAVASCRIPT/authState.js"></script>
+  <script type="module" src="../JAVASCRIPT/novo.js"></script>
   <script src="../JAVASCRIPT/formulario.js" type="module"></script>
   <header>
     <nav class="navbar">
@@ -44,16 +46,17 @@
         </div>
         <div class="navbar-right">
             <div class="right-items">
-                <a href="upgrade" class="upgrade-button">Premium</a>ㅤ
-                <a href="login.html" class="upgrade-button">Logar</a>ㅤ
-                <a href="cadastro.html" class="upgrade-button">Cadastre-se</a>
-                <div class="avatar">
-                    <i class="bi bi-person-circle icon-large" id="user-icon"></i>
-                    <ul class="dropdown-menu" id="dropdown-menu">
-                        <li><a href="configuracao.html">Configuração</a></li>
-                        <li><a href="mudar-avatar.html">Mudar Avatar</a></li>
-                        <li><a href="../HTML/feedback.html">Contate-nos</a></li>
-                    </ul>
+              <a href="../HTML/upgrade.html" class="upgrade-button">Premium</a>ㅤ
+              <a href="../HTML/login.html" class="login-button" id="login" hidden>Logar</a>ㅤ
+              <a href="../HTML/cadastro.html" class="signin-button" id="cadastro" hidden>Cadastre-se</a>
+              <div class="avatar">
+                  <i class="bi bi-person-circle icon-large" id="user-icon"></i>
+                  <ul class="dropdown-menu" id="dropdown-menu">
+                      <li><a href="configuracao.html">Configuração</a></li>
+                      <li><a href="mudar-avatar.html">Mudar Avatar</a></li>
+                      <li><a href="../HTML/feedback.html">Contate-nos</a></li>
+                      <li><button type="button" id="button" onclick="logOut()" hidden>LogOut</button></li>
+                  </ul>
                 </div>
             </div>
         </div>
