@@ -40,7 +40,7 @@
                     </div>
                     <div class="nav-item">
                         <i class="fas fa-store"></i>
-                        <a href="../HTML/gamificaçao.html">Sobre Nós</a>
+                        <a href="../HTML/sobrenos.html">Sobre Nós</a>
                     </div>
                 </div>
             </div>
@@ -53,8 +53,8 @@
                         <i class="bi bi-person-circle icon-large" id="user-icon"></i>
                         <ul class="dropdown-menu" id="dropdown-menu">
                             <li><a href="configuracao.html">Configuração</a></li>
-                            <li><a href="mudar-avatar.html">Mudar Avatar</a></li>
-                            <li><a href="../HTML/feedback.html">Contate-nos</a></li>
+                            <li><a href="mudar-avatar.html"></a>relatar problema</li>
+                            <li><a href="../HTML/feedback.html">feedback</a></li>
                             <li><button type="button" id="button" onclick="logOut()" hidden>LogOut</button></li>
                         </ul>
                     </div>
@@ -62,6 +62,22 @@
             </div>
         </nav>
     </header>
+    
+    <script>
+        const userIcon = document.getElementById('user-icon');
+        const dropdownMenu = document.getElementById('dropdown-menu');
+    
+        userIcon.addEventListener('click', () => {
+            dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+        });
+    
+        // Fecha o menu se o usuário clicar fora dele
+        window.addEventListener('click', (event) => {
+            if (!userIcon.contains(event.target) && !dropdownMenu.contains(event.target)) {
+                dropdownMenu.style.display = 'none';
+            }
+        });
+    </script>
     
         <div class="container">
        

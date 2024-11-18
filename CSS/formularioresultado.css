@@ -23,14 +23,14 @@
     align-items: center;
     padding: 10px;
     background-color: #8ba96e;
-  }
-  
-  .navbar-left {
+}
+
+.navbar-left {
     display: flex;
     align-items: center;
-  }
-  
-  .logo {
+}
+
+.logo {
     display: flex;
     background-color: rgb(16, 8, 8);
     padding: 5px;
@@ -38,37 +38,37 @@
     position: relative;
     width: 120px;
     text-decoration: none;
-  }
-  .logo img {
+}
+.logo img {
   max-width: 100px;  /* Limita a largura máxima da imagem */
   max-height: 40px;  /* Limita a altura máxima da imagem */
   width: auto;  /* Ajusta a largura automaticamente */
   height: auto;  /* Ajusta a altura automaticamente */
-  }
-  
-  .btn-overlay {
+}
+
+.btn-overlay {
   text-decoration: none; /* Remove o sublinhado do link */
   color: white;           /* Define a cor do texto do link */
   font-size: 16px;       /* Define o tamanho da fonte */
   padding: 10px;     /* Adiciona um pouco de espaço interno */
   border: 1px solid #000; /* Adiciona uma borda ao redor do link */
   border-radius: 4px;
-  }
-  
-  .nav-items {
+}
+
+.nav-items {
     display: flex;
     align-items: center;
     margin-left: 20px;
-  }
-  
-  .nav-item {
+}
+
+.nav-item {
     display: flex;
     align-items: center;
     color: rgb(1, 1, 1);
     margin-right: 20px;
-  }
-  
-  .nav-item a {
+}
+
+.nav-item a{
     text-decoration: none;
     display: inline-block;
     padding: 7px 10px;
@@ -77,28 +77,28 @@
     border-radius: 5px;
     transition: background-color 0.3s;
     border: 2px solid #ffffff;
-  }
-  
-  .nav-item a:hover {
+}
+
+.nav-item a:hover {
     background-color: #000000;
     color: white;
-  }
-  
-  .nav-item i {
+}
+
+.nav-item i {
     margin-right: 5px;
-  }
-  
-  .navbar-right {
+}
+
+.navbar-right {
     display: flex;
     align-items: center;
-  }
-  
-  .right-items {
+}
+
+.right-items {
     display: flex;
     align-items: center;
-  }
-  
-  .upgrade-button {
+}
+
+.upgrade-button, .login-button, .signin-button {
     text-decoration: none;
     display: inline-block;
     padding: 7px 10px;
@@ -107,53 +107,65 @@
     border-radius: 5px;
     transition: background-color 0.3s;
     border: 2px solid #ffffff;
-  }
-  
-  .upgrade-button a:hover {
+}
+
+.upgrade-button:hover {
     background-color: #000000;
     color: white;
-  }
-  
-  .avatar {
+}
+.login-button:hover {
+  background-color: #000000;
+  color: white;
+}
+.signin-button:hover {
+  background-color: #000000;
+  color: white;
+}
+
+.avatar {
     padding: 5px;
     border-radius: 50%;
     margin-left: 10px;
-  }
-  
-  .icon-large {
+}
+
+.icon-large {
     font-size: 2rem; /* Aumente o tamanho conforme necessário */
     color: #000; /* Altere a cor se desejar */
-  }
-  
-  
-  /* de clicar no icone */
-  .dropdown-menu {
-    display: none; /* Inicialmente escondido */
-    position: absolute; /* Posiciona o menu em relação ao seu elemento pai */
-    background-color: white; /* Cor de fundo do menu */
-    border: 3px solid #ccc; /* Borda para o menu */
-    border-radius: 5px; /* Bordas arredondadas */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra */
-    list-style-type: none; /* Remove os marcadores da lista */
-    right: 3px;
-    padding: 0; /* Remove o preenchimento padrão */
-    margin: 0; /* Remove a margem padrão */
-    z-index: 1000; /* Garante que o menu apareça acima de outros elementos */
-  }
-  
-  .dropdown-menu li {
+}
+
+
+/* de clicar no icone */
+.dropdown-menu {
+  display: none; /* Inicialmente escondido */
+  position: absolute; /* Posiciona o menu em relação ao seu elemento pai */
+  background-color: white; /* Cor de fundo do menu */
+  border: 3px solid #ccc; /* Borda para o menu */
+  border-radius: 5px; /* Bordas arredondadas */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+  list-style-type: none; /* Remove os marcadores da lista */
+  right: 3px;
+  padding: 0; /* Remove o preenchimento padrão */
+  margin: 0; /* Remove a margem padrão */
+  z-index: 1000; /* Garante que o menu apareça acima de outros elementos */
+}
+
+.dropdown-menu li {
   padding: 10px; /* Espaçamento interno dos itens do menu */
-  }
-  
-  .dropdown-menu li a {
+}
+
+.dropdown-menu li a {
   text-decoration: none; /* Remove a linha embaixo */
   color: #000; /* Cor do texto */
   display: block; /* Faz o link ocupar toda a área do item */
-  }
-  
-  .dropdown-menu li a:hover {
+}
+
+.dropdown-menu li a:hover {
   background-color: #f0f0f0; /* Cor de fundo ao passar o mouse */
-  }
+}
+#user-icon{
+cursor: pointer;
+}
+
   
   .container {
     background-color: #eff2e4;

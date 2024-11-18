@@ -5,7 +5,6 @@
     box-sizing: border-box;
 }
 
-/* Body */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -15,6 +14,7 @@ body {
     background-color:#eff2e4 ;
 }
 
+/* Body */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -66,7 +66,7 @@ body {
     margin-right: 20px;
 }
 
-.nav-item a {
+.nav-item a{
     text-decoration: none;
     display: inline-block;
     padding: 7px 10px;
@@ -96,7 +96,7 @@ body {
     align-items: center;
 }
 
-.upgrade-button {
+.upgrade-button, .login-button, .signin-button {
     text-decoration: none;
     display: inline-block;
     padding: 7px 10px;
@@ -107,9 +107,17 @@ body {
     border: 2px solid #ffffff;
 }
 
-.upgrade-button a:hover {
+.upgrade-button:hover {
     background-color: #000000;
     color: white;
+}
+.login-button:hover {
+  background-color: #000000;
+  color: white;
+}
+.signin-button:hover {
+  background-color: #000000;
+  color: white;
 }
 
 .avatar {
