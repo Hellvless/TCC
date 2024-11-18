@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../IMAGE/logo.png" type="image/icon type">
+    <link rel="stylesheet" href="../CSS/relatorio.css">
+    <title>Login</title>
+</head>
+
+<body>
+    <script type="module" src="../JAVASCRIPT/login.js"></script>
+    <div id="fundo">
+        <div class="content-box">
+            <div class="form-box">
+                <h2>Relate o seu problema</h2>
+                <div class="text">
+                    <label for="caixaTexto"></label>
+                    <textarea id="caixaTexto" name="caixaTexto" rows="4" placeholder="Escreva sua mensagem aqui..."></textarea>
+                </div>
+
+                <!-- Área de clique para anexar o arquivo -->
+                <input type="file" id="fileInput" style="display: none;" onchange="exibirNomeArquivo()">
+                
+                <div class="file-upload-area" onclick="document.getElementById('fileInput').click()">
+                    <span id="fileUploadText">Clique aqui para anexar um arquivo</span>
+                    <span id="fileNameDisplay">Nenhum arquivo anexado</span>
+                </div>
+
+                <div class="button">
+                    <button>Continuar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function exibirNomeArquivo() {
+            const fileInput = document.getElementById('fileInput');
+            const fileNameDisplay = document.getElementById('fileNameDisplay');
+
+            if (fileInput.files.length > 0) {
+                const nomeArquivo = fileInput.files[0].name;
+                fileNameDisplay.textContent = nomeArquivo;
+            } else {
+                fileNameDisplay.textContent = 'Nenhum arquivo anexado';
+            }
+        }
+    </script>
+
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+          <div class="vw-plugin-top-wrapper"></div>
+        </div>
+      </div>
+      <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+      <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+      </script>
+</body>
+
+</html>
