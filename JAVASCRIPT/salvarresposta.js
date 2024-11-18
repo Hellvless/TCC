@@ -1,7 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
 import { getAuth} from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
 import { getDatabase, set, get, update, remove, ref, child} from "https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js";
-import {emissoes} from "formulario.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyCEh1zVhU1AG4tcV3yQMXQlGmNG9hWho1E",
@@ -19,37 +18,44 @@ const firebaseConfig = {
 
   function SalvarRepostas(){
      // Pegue as respostas do formulário
-  const corFavorita = document.getElementById("corFavorita").value;
-  const comidaFavorita = document.getElementById("comidaFavorita").value;
-  const hobbyFavorito = document.getElementById("hobbyFavorito").value;
-  const destino = document.getElementById("destino").value;
+     const emissaoKwh = parseFloat(sessionStorage.getItem('emissaoKwh') || 0);
+     const emissaoRoupas = parseFloat(sessionStorage.getItem('emissaoRoupas') || 0);
+     const emissaoVeiculo = parseFloat(sessionStorage.getItem('emissaoVeiculo') || 0);
+     const emissaoTransportePublico = parseFloat(sessionStorage.getItem('emissaoTransportePublico') || 0);
+     const emissaoCarne = parseFloat(sessionStorage.getItem('emissaoCarne') || 0);
+     const emissaoVoos = parseFloat(sessionStorage.getItem('emissaoVoos') || 0);
+     const emissaoAgua = parseFloat(sessionStorage.getItem('emissaoAgua') || 0);
+     const emissaoAlimentoOrganico = parseFloat(sessionStorage.getItem('emissaoAlimentoOrganico') || 0);
+     const emissaoRecicla = parseFloat(sessionStorage.getItem('emissaoRecicla') || 0);
+     const totalEmissoes = parseFloat(sessionStorage.getItem('totalEmissoes') || 0);
+
 
   // Obtenha o usuário logado
   const auth = getAuth();
   const user = auth.currentUser; // Pega o usuário logado no momento
 
   if (user) {
-    const uid = user.uid; // Pega o UID do usuário logado
-
-    // Agora, criamos uma subpasta "respostas" dentro do usuário e usamos o push() para criar uma chave única para cada conjunto de respostas
-    const respostasRef = ref(db, 'users/' + uid + '/respostas');
-    
-    // Usamos push() para gerar uma chave única automaticamente para a resposta
-    const novaRespostaRef = push(respostasRef);
-
-    // Salve as respostas no Firebase
-    set(novaRespostaRef, {
-      corFavorita: corFavorita,
-      comidaFavorita: comidaFavorita,
-      hobbyFavorito: hobbyFavorito,
-      destino: destino
-    }).then(() => {
-      alert("Respostas salvas com sucesso!");
-    }).catch((error) => {
-      console.error("Erro ao salvar respostas: ", error);
-      alert("Erro ao salvar respostas: " + error.message);
-    });
-  } else {
-    alert("Usuário não está autenticado.");
-  }
-  }
+        const uid = user.uid;
+        const respostasRef = ref(db, 'user/' + uid + '/emissoes');
+        const novaRespostaRef = push(respostasRef);
+        set(novaRespostaRef, {
+            emissaoKwh,
+            emissaoRoupas,
+            emissaoVeiculo,
+            emissaoTransportePublico,
+            emissaoCarne,
+            emissaoVoos,
+            emissaoAgua,
+            emissaoAlimentoOrganico,
+            emissaoRecicla,
+            totalEmissoes
+        }).then(() => {
+            alert("Emissões salvas com sucesso!");
+        }).catch((error) => {
+            console.error("Erro ao salvar emissões: ", error);
+            alert("Erro ao salvar emissões: " + error.message);
+        });
+    } else {
+        alert("Usuário não está autenticado.");
+    }
+}
