@@ -427,6 +427,28 @@ window.nextPage2 = nextPage2;
             });
              // Opcional: Exibir no console ou em algum lugar na página
     console.log("Emissões totais mensais de CO₂:", totalEmissoes.toFixed(2) + " kg CO₂/mes");
+        sessionStorage.setItem("emissaoKwh", emissaoKwh);
+        sessionStorage.setItem("emissaoRoupas", emissaoRoupas);
+        sessionStorage.setItem("emissaoVeiculo", emissaoVeiculo);
+        sessionStorage.setItem("emissaoTransportePublico", emissaoTransportePublico);
+        sessionStorage.setItem("emissaoCarne", emissaoCarne);
+        sessionStorage.setItem("emissaoVoos", emissaoVoos);
+        sessionStorage.setItem("emissaoAgua", emissaoAgua);
+        sessionStorage.setItem("emissaoAlimentoOrganico", emissaoAlimentoOrganico);
+        sessionStorage.setItem("emissaoRecicla", emissaoRecicla);
+        sessionStorage.setItem("TotalEmissoes", totalEmissoes);
+
+        
+    console.log(emissaoKwh );
+    console.log(emissaoRoupas);
+    console.log(emissaoVeiculo);
+    console.log(emissaoTransportePublico);
+    console.log(emissaoCarne);
+    console.log(emissaoVoos);
+    console.log(emissaoAgua);
+    console.log(emissaoAlimentoOrganico);
+    console.log(emissaoRecicla);
+    console.log(totalEmissoes);
         }
 
    
@@ -438,7 +460,8 @@ window.nextPage2 = nextPage2;
     
     // Verificando o caminho da URL
     if (window.location.pathname.includes('formularioresultado.html')) {
-        calcularEmissoes(); // Chama a função somente se estiver em "index.html"
+        calcularEmissoes(); // Chama a função somente se estiver em "index.html" 
+        
     }
 
       window.calcularEmissoes = calcularEmissoes;

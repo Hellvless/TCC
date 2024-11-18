@@ -64,6 +64,16 @@ const firebaseConfig = {
     } else {
         alert("Usuário não está autenticado.");
     }
+    console.log(emissaoKwh );
+    console.log(emissaoRoupas);
+    console.log(emissaoVeiculo);
+    console.log(emissaoTransportePublico);
+    console.log(emissaoCarne);
+    console.log(emissaoVoos);
+    console.log(emissaoAgua);
+    console.log(emissaoAlimentoOrganico);
+    console.log(emissaoRecicla);
+    console.log(totalEmissoes);
 };
 
 window.SalvarRespostas = SalvarRespostas;
