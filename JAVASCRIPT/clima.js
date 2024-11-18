@@ -43,7 +43,7 @@ document.querySelector('#search').addEventListener('submit', async (event) => {
         });
     } else {
         document.querySelector("#weather").classList.remove('show');
-        showAlert(`Não foi possível localizar a cidade... <img src="src/images/404.svg"/>`);
+        showAlert(`Não foi possível localizar a cidade... <img src="../IMAGE/error-404.png"/>`);
     }
 });
 
