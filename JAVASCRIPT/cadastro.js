@@ -1,6 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
 import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
-
+import { getDatabase, set, get, update, remove, ref, child} from "https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js";
 
 
 const firebaseConfig = {
@@ -14,6 +14,7 @@ const firebaseConfig = {
 };
 const app = initializeApp(firebaseConfig);
 const auth = getAuth();
+const db = getDatabase();
 console.log("Auth:", auth); // Verifique se `auth` está inicializado corretamente
 
 
@@ -34,18 +35,33 @@ function cadastrar() {
       alert("As senhas não coincidem!");
       return;
   }
+  
 
+  
   // Firebase authentication (exemplo)
     createUserWithEmailAndPassword(auth, email, senha)
       .then((userCredential) => {
-          // Usuário cadastrado com sucesso
-          console.log("Usuário cadastrado:", userCredential.user);
-          alert("Cadastro realizado com sucesso!");
-            window.location.href = "novo.html";
+        const user = userCredential.user; // Pega o user do userCredential
+
+        // Agora, retorne a referência do banco de dados para ser usada no próximo then()
+        return set(ref(db, 'user/' + user.uid), {
+          email: user.email,
+          idade: idade,
+          nome: nome,
+          sexo: sexo,
+          sobrenome: sobrenome,
+          telefone: telefone
+        });
+      })
+      .then(()=>{
+        console.log("Dados enviados ao banco de dados!");
+        alert("Cadastro realizado com sucesso!");
       })
       .catch((error) => {
           console.error("Erro ao cadastrar usuário:", error.message);
       });
+  
+  
 }
 
 // Adiciona a função ao objeto global `window` -------- assim dá pra usar no html normalmente
