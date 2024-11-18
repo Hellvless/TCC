@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../IMAGE/logo.png" type="image/icon type">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="../CSS/login.css">
     <title>Login</title>
 </head>
@@ -20,21 +21,24 @@
                 <form>
                     <div class="input-box">
                         <span>E-mail</span>
-                        <input type="email" 
-                        id="email" placeholder="E-mail">
+                        <input type="email" id="email" placeholder="E-mail">
                     </div>
 
                     <div class="input-box">
                         <span>Senha</span>
-                        <input type="password" 
-                        id="senha" placeholder="Senha">
+                        <div class="password-container">
+                            <input type="password" id="senha" placeholder="Senha">
+                           
+                            <i id="showPassword" class="bi bi-eye" style="display: none;"></i>
+                            <i id="hidePassword" class="bi bi-eye-slash"></i>
+                        </div>
                     </div>
 
                     <div class="remember">
                         <label>
                             <input type="checkbox"> Lembre me
                         </label>
-                    <a href="../HTML/esqueceu.html" id="recuperarSenha">Esqueceu a Senha?</a>
+                        <a href="../HTML/esqueceu.html" id="recuperarSenha">Esqueceu a Senha?</a>
                     </div>
 
                     <div class="input-box">
@@ -42,7 +46,7 @@
                     </div>
 
                     <div class="input-box">
-                       <p>Não Tem Uma Conta? <a href="../HTML/cadastro.html">Cadastre-se</a></p>
+                        <p>Não Tem Uma Conta? <a href="../HTML/cadastro.html">Cadastre-se</a></p>
                     </div>
                 </form>
                 <h3>Logar Com</h3>
@@ -55,6 +59,24 @@
             </div>
         </div>
     </div>
+<script>
+   const passwordInput = document.getElementById('senha');
+const showPassword = document.getElementById('showPassword');
+const hidePassword = document.getElementById('hidePassword');
+
+// Alternar visibilidade da senha
+showPassword.addEventListener('click', () => {
+    passwordInput.type = 'password';
+    showPassword.style.display = 'none';
+    hidePassword.style.display = 'block';
+});
+
+hidePassword.addEventListener('click', () => {
+    passwordInput.type = 'text';
+    hidePassword.style.display = 'none';
+    showPassword.style.display = 'block';
+});
+</script>
     <div vw class="enabled">
         <div vw-access-button class="active"></div>
         <div vw-plugin-wrapper>

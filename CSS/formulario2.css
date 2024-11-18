@@ -98,7 +98,7 @@ border-radius: 4px;
   align-items: center;
 }
 
-.upgrade-button {
+.upgrade-button, .login-button, .signin-button {
   text-decoration: none;
   display: inline-block;
   padding: 7px 10px;
@@ -109,10 +109,19 @@ border-radius: 4px;
   border: 2px solid #ffffff;
 }
 
-.upgrade-button a:hover {
+.upgrade-button:hover {
   background-color: #000000;
   color: white;
 }
+.login-button:hover {
+background-color: #000000;
+color: white;
+}
+.signin-button:hover {
+background-color: #000000;
+color: white;
+}
+
 
 .avatar {
   padding: 5px;

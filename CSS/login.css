@@ -60,17 +60,34 @@ body {
     background-color: #eff2e4;
     border-radius: 5px;
     border: 2px solid black;
+    position: relative;
 }
 
-.form-box .input-box span {
-    font-size: 16px;
-    margin-bottom: 5px;
-    display: inline-block;
-    color: #c1c1c1;
-    font-weight: 400;
+.password-container {
+    position: relative;
 }
 
-#logar{
+.password-container input {
+    width: 100%;
+    padding-right: 40px; /* Espaço para o ícone */
+}
+
+.password-container i {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 20px;
+    color: #000000;
+    transition: 0.3s;
+}
+
+.password-container i:hover {
+    color: black;
+}
+
+#logar {
     background: #8ba96e;
     color: #fff;
     outline: none;
@@ -112,6 +129,7 @@ body {
 
 .input-box p a {
     color: #8ba96e;
+    text-decoration: none
 }
 
 .input-box p a:hover {
@@ -154,10 +172,11 @@ body {
     width: 40px;
 }
 
-.back-btn{
- color: #8ba96e;
- transition: 0.3s;
+.back-btn {
+    color: #8ba96e;
+    transition: 0.3s;
 }
-.back-btn:hover{
+
+.back-btn:hover {
     color: #738f59;
 }
