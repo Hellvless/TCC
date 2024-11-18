@@ -201,5 +201,18 @@ cursor: pointer;
     margin-bottom: 10px;
 }
 
+.armazenar a {
+  text-decoration: none;
+  display: inline-block;
+  padding: 7px 233px;
+  background-color: #eff2e4;
+  color: #000000;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  border: 2px solid #8ba96e;
+}
 
-
+.armazenar a:hover {
+  background-color: #8ba96e;
+  color: white;
+}
