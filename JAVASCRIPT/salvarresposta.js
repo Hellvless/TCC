@@ -1,6 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
 import { getAuth} from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
-import { getDatabase, set, get, update, remove, ref, child} from "https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js";
+import { getDatabase, set, get, update, remove, push, ref, child} from "https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyCEh1zVhU1AG4tcV3yQMXQlGmNG9hWho1E",
@@ -16,7 +16,7 @@ const firebaseConfig = {
   const db = getDatabase();
   console.log("Auth:", auth); // Verifique se `auth` está inicializado corretamente
 
-  function SalvarRepostas(){
+  function SalvarRespostas(){
      // Pegue as respostas do formulário
      const emissaoKwh = parseFloat(sessionStorage.getItem('emissaoKwh') || 0);
      const emissaoRoupas = parseFloat(sessionStorage.getItem('emissaoRoupas') || 0);
@@ -37,8 +37,14 @@ const firebaseConfig = {
   if (user) {
         const uid = user.uid;
         const respostasRef = ref(db, 'user/' + uid + '/emissoes');
+        const hoje = new Date();
+        const dia = hoje.getDate().toString().padStart(2, '0');  // Garantir que o dia tenha 2 dígitos
+        const mes = (hoje.getMonth() + 1).toString().padStart(2, '0');  // Meses começam do 0, então adicionamos 1
+        const ano = hoje.getFullYear();  // Ano completo
+        const Data=  `${dia}-${mes}-${ano}`;
         const novaRespostaRef = push(respostasRef);
         set(novaRespostaRef, {
+            Data,
             emissaoKwh,
             emissaoRoupas,
             emissaoVeiculo,
@@ -58,4 +64,6 @@ const firebaseConfig = {
     } else {
         alert("Usuário não está autenticado.");
     }
-}
+};
+
+window.SalvarRespostas = SalvarRespostas;
