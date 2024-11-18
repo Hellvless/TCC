@@ -201,10 +201,10 @@ cursor: pointer;
     margin-bottom: 10px;
 }
 
-.armazenar a {
+.salvar button {
   text-decoration: none;
   display: inline-block;
-  padding: 7px 233px;
+  padding: 7px 240px;
   background-color: #eff2e4;
   color: #000000;
   border-radius: 5px;
@@ -212,7 +212,7 @@ cursor: pointer;
   border: 2px solid #8ba96e;
 }
 
-.armazenar a:hover {
+.salvar button:hover {
   background-color: #8ba96e;
   color: white;
 }

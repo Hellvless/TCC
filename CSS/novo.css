@@ -118,11 +118,18 @@ body {
     border-radius: 50%;
     margin-left: 10px;
 }
+.avatar button,a{
+background-color: transparent;
+border: transparent;
+text-align: center;
+}
 
 .icon-large {
     font-size: 2rem; /* Aumente o tamanho conforme necessário */
     color: #000; /* Altere a cor se desejar */
 }
+
+
 
 
 /* de clicar no icone */
