@@ -19,37 +19,46 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 10px;
-  background-color: #8ba96e;
+  background-color: #000000;
 }
 
 .navbar-left {
   display: flex;
   align-items: center;
 }
-
 .logo {
-  display: flex;
-  background-color: rgb(16, 8, 8);
-  padding: 5px;
-  border-radius: 5px;
-  position: relative;
-  width: 120px;
-  text-decoration: none;
+text-decoration: none; /* Remove sublinhado padrão */
+position: relative; /* Necessário para posicionar o ::after */
+color: #eff2e4; /* Cor do texto */
+padding: 5px 10px; /* Espaçamento interno */
+display: flex; /* Garante alinhamento horizontal do texto e do ícone */
+align-items: center; /* Centraliza verticalmente o texto e o ícone */
+}
+
+.logo img {
+margin-left: 10px; /* Espaço entre o texto e o ícone */
+height: 24px; /* Ajuste o tamanho do ícone conforme necessário */
+}
+
+.logo::after {
+content: ""; /* Elemento para a linha */
+position: absolute;
+left: 0;
+bottom: 0; /* Linha alinhada na base do texto */
+width: 0;
+height: 2px; /* Altura da linha */
+background-color: #8ba96e; /* Cor da linha */
+transition: width 0.3s ease; /* Transição suave */
+}
+
+.logo:hover::after {
+width: 100%; /* Linha se expande em hover */
 }
 .logo img {
 max-width: 100px;  /* Limita a largura máxima da imagem */
 max-height: 40px;  /* Limita a altura máxima da imagem */
 width: auto;  /* Ajusta a largura automaticamente */
 height: auto;  /* Ajusta a altura automaticamente */
-}
-
-.btn-overlay {
-text-decoration: none; /* Remove o sublinhado do link */
-color: white;           /* Define a cor do texto do link */
-font-size: 16px;       /* Define o tamanho da fonte */
-padding: 10px;     /* Adiciona um pouco de espaço interno */
-border: 1px solid #000; /* Adiciona uma borda ao redor do link */
-border-radius: 4px;
 }
 
 .nav-items {
@@ -59,26 +68,46 @@ border-radius: 4px;
 }
 
 .nav-item {
-  display: flex;
-  align-items: center;
-  color: rgb(1, 1, 1);
-  margin-right: 20px;
+position: center;
+display: inline-block; /* Garante alinhamento correto */
+font-family: Arial, Helvetica, sans-serif;
 }
 
-.nav-item a{
-  text-decoration: none;
-  display: inline-block;
-  padding: 7px 10px;
-  background-color: white;
-  color: #000000;
-  border-radius: 5px;
-  transition: background-color 0.3s;
-  border: 2px solid #ffffff;
+.nav-item a {
+text-decoration: none; /* Remove sublinhado padrão */
+position: relative;
+color: #eff2e4; /* Cor do texto */
+padding: 5px 10px; /* Espaçamento interno */
+display: flex; /* Garante alinhamento do texto com ícone */
+align-items: center;
 }
 
-.nav-item a:hover {
-  background-color: #000000;
-  color: white;
+.nav-item a::after {
+content: "";
+position: absolute;
+left: 0;
+bottom: 0; /* Linha alinhada na base do texto */
+width: 0;
+height: 2px;
+background-color: #8ba96e; /* Cor da linha */
+transition: width 0.3s ease; /* Transição suave da linha */
+}
+
+.nav-item a:hover::after {
+width: 100%; /* Expande a linha ao passar o mouse */
+}
+
+.nav-item i {
+margin-left: 5px; /* Espaçamento entre o texto e o ícone */
+opacity: 0; /* Ícone invisível inicialmente */
+transform: translateX(-10px); /* Move levemente o ícone para a esquerda */
+transition: opacity 0.3s ease, transform 0.3s ease; /* Suaviza a transição */
+}
+
+.nav-item a:hover i {
+opacity: 1; /* Exibe o ícone */
+transform: translateX(0); /* Move o ícone para sua posição original */
+color: #8ba96e;
 }
 
 .nav-item i {
@@ -93,30 +122,47 @@ border-radius: 4px;
 .right-items {
   display: flex;
   align-items: center;
-}
-
-.upgrade-button, .login-button, .signin-button {
-  text-decoration: none;
-  display: inline-block;
-  padding: 7px 10px;
-  background-color: white;
-  color: #000000;
-  border-radius: 5px;
-  transition: background-color 0.3s;
-  border: 2px solid #ffffff;
-}
-
-.upgrade-button:hover {
-  background-color: #000000;
   color: white;
+ font-family: Arial, Helvetica, sans-serif;
 }
-.login-button:hover {
-background-color: #000000;
-color: white;
+
+/* Botões da barra de navegação */
+.upgrade-button, .login-button, .signin-button {
+text-decoration: none;
+display: inline-block;
+padding: 8px 15px; /* Espaçamento interno maior para melhor usabilidade */
+color: #eff2e4; /* Cor do texto */
+font-weight: bold; /* Melhor visibilidade */
+border-radius: 5px; /* Borda arredondada */
+transition: width 0.3s ease; /* Transição suave da linha /* Suavidade ao interagir */
 }
+
+.upgrade-button:hover,
+.login-button:hover,
 .signin-button:hover {
-background-color: #000000;
-color: white;
+color: #fff; /* Contraste */
+}
+
+/* Linha animada nos links */
+.right-items a {
+position: relative;
+text-decoration: none;
+color: inherit; /* Herda a cor definida no botão */
+}
+
+.right-items a::after {
+content: "";
+position: absolute;
+left: 0;
+bottom: 0; /* Linha alinhada na base do texto */
+width: 0;
+height: 2px;
+background-color: #8ba96e; /* Cor da linha */
+transition: width 0.3s ease; /* Transição suave da linha */
+}
+
+.right-items a:hover::after {
+width: 100%; /* Expande a linha ao passar o mouse */
 }
 
 .avatar {
@@ -124,11 +170,20 @@ color: white;
   border-radius: 50%;
   margin-left: 10px;
 }
+.avatar i{
+color: white;
+}
+.avatar button,a{
+background-color: transparent;
+border: transparent;
+text-align: center;
+}
 
 .icon-large {
   font-size: 2rem; /* Aumente o tamanho conforme necessário */
   color: #000; /* Altere a cor se desejar */
 }
+
 
 
 /* de clicar no icone */
