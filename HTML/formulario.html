@@ -94,10 +94,14 @@
 
   <form id="form" class="form" action="formulario1.html" method="POST">
     <div class="form-content">
-      <label for="kwh">Quantos KWh você consome mensalmente?</label>
-      <input type="number" min="0" id="kwh" name="kwh" placeholder="Digite o consumo em KWh" required />
-    
-    </div>
+  <label for="kwh">Quantos KWh você consome mensalmente?</label>
+  
+  <div class="input-container">
+    <input type="number" min="0" id="kwh" name="kwh" placeholder="Digite o consumo em KWh" required />
+    <span class="tooltip-icon">?</span>
+    <div class="tooltip-text">Informe o valor do consumo mensal em KWh.</div>
+  </div>
+</div>
 
     <div class="form-content">
       <label for="roupas-ano">Quantas vezes por ano você compra roupas?</label>

@@ -62,7 +62,7 @@
                             <li><a href="configuracao.html">Configuração</a></li>
                             <li><a href="../HTML/relatorio.html">relatar problema</a></li>
                             <li><a href="../HTML/feedback.html">feedback</a></li>
-                            <li><a href="../HTML/historico.html">Histórico de Cálculos</a></li>
+                            <li><a href="../HTML/historico.html" id="historico" hidden>Histórico de Cálculos</a></li>
                             <li><button type="button" id="button" onclick="logOut()" hidden>  sair da conta</button></li>
                         </ul>
                     </div>
@@ -114,20 +114,20 @@
 <section class="anuncio">
     <div class="text">
      
-        <h1>  Bem-vindo ao EcoPrint!!  </h1>
+        <h1>  Bem-vindo ao EcoPrint  </h1>
         <p>
-            ㅤBem-vindo ao nosso site, onde você encontra as melhores ferramentas para entender e
-             agir pelo planeta! Comece agora usando nossa calculadora de carbono, que traz em
-              tempo real a atualização do impacto climático, para que você veja como suas ações
-               podem fazer a diferença. Participe também da nossa tabela de ranking e concorra a prêmios
-                incríveis – a cada
-             contribuição para reduzir emissões, você sobe no ranking e se aproxima de
-              recompensas exclusivas!
+            ㅤAs emissões de CO2 têm um impacto direto e devastador no meio ambiente, sendo uma das principais
+             causas das mudanças climáticas. O aumento das temperaturas globais, a elevação do nível do mar 
+             e a perda de biodiversidade são apenas alguns dos efeitos que resultam da poluição atmosférica.
+              Cada ação de emissão contribui para esse ciclo de destruição, afetando a saúde do planeta e das
+               futuras gerações.
         </p>
-        <p>ㅤPara uma experiência ainda mais completa, conheça nosso Plano Premium, que oferece insights
-             detalhados, recomendações personalizadas e benefícios únicos para você liderar a mudança e 
-             cuidar do meio ambiente
-             com facilidade. Junte-se a nós e veja como nosso site transforma a conscientização em ação!</p>
+        <p>ㅤCom a plataforma Ecoprint, é possível medir, entender e reduzir a sua pegada de carbono de
+             maneira simples e eficaz. A calculadora de carbono oferece dados em tempo real sobre o impacto
+              das suas atividades, e, à medida que você adota práticas mais sustentáveis, sobe no ranking e 
+              concorre a prêmios exclusivos. Além disso, com a assinatura Premium, você tem acesso a insights
+               personalizados e recomendações para adotar um estilo de vida mais ecofriendly, contribuindo
+                ativamente para a preservação do meio ambiente.</p>
 
     </div>
     <div class="slider">
@@ -152,7 +152,7 @@
     <section class="section-sub news-container">
         <div id="newsWrapper" class="news-grid">
             <script>
-                const apiKey = '6e0f1d69ccfdbe84110311ad9bdd4aca';
+                const apiKey = 'b5e2be10db9262e02447a8c523f3268c';
                 const url = `https://gnews.io/api/v4/search?q=meio%20ambiente&lang=pt&token=${apiKey}`;
             
                 async function fetchNews() {

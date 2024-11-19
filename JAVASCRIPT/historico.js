@@ -60,12 +60,22 @@ function carregarEmissoes() {
                 
                         };
 
-                        const textoAcessar = document.createElement('div');
+                        const textoAcessar = document.createElement('p');
                         textoAcessar.classList.add('acessar-texto');
                         textoAcessar.textContent = "Acessar";
 
+                        const botaoRemover = document.createElement('button');
+                        botaoRemover.classList.add('remover-button');
+                        botaoRemover.textContent = "Remover";
+
+                        botaoRemover.onclick = () => {
+                            divEmissao.remove();  // Remove a div do DOM
+                        };
+                    
+
                         divEmissao.appendChild(botao);
                         divEmissao.appendChild(textoAcessar);
+                        divEmissao.appendChild(botaoRemover);  // Adiciona o botão de remover à div
 
                         // Adiciona a div de emissão ao container
                         container.appendChild(divEmissao);
