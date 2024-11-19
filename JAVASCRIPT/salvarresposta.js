@@ -41,7 +41,11 @@ const firebaseConfig = {
         const dia = hoje.getDate().toString().padStart(2, '0');  // Garantir que o dia tenha 2 dígitos
         const mes = (hoje.getMonth() + 1).toString().padStart(2, '0');  // Meses começam do 0, então adicionamos 1
         const ano = hoje.getFullYear();  // Ano completo
-        const Data=  `${dia}-${mes}-${ano}`;
+        const hora = hoje.getHours().toString().padStart(2, '0');  // Hora com 2 dígitos
+    const minuto = hoje.getMinutes().toString().padStart(2, '0');  // Minuto com 2 dígitos
+
+    // Criando a string da data com hora e minuto
+    const Data = `${dia}-${mes}-${ano} ${hora}:${minuto}`;
         const novaRespostaRef = push(respostasRef);
         set(novaRespostaRef, {
             Data,

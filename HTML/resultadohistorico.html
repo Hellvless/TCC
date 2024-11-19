@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="t-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulário de Consumo</title>
+  <link rel="stylesheet" href="../CSS/formularioresultado.css">
+  <link rel="icon" href="../IMAGE/logo.png" type="image/icon type">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+</head>
+<body>
+    <script type="module" src="../JAVASCRIPT/authState.js"></script>
+    <script type="module" src="../JAVASCRIPT/novo.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+  <script src="../JAVASCRIPT/resultadohistorico.js" type="module"></script>
+  <header>
+    <nav class="navbar">
+        <div class="navbar-left">
+            <a href="novo.html" class="logo">  
+                <img src="../IMAGE/logo.png" alt="EcoPrint">
+                <span class="btn-overlay">Ecoprint</span>
+            </a>
+            </div>
+            <div class="nav-items">
+                <div class="nav-item">
+                    <i class="bi bi-search"></i>
+                    <a href="..///HTML/noticia.html">Notícias</a>
+                </div>
+                <div class="nav-item">
+                    <i class="fas fa-chart-line"></i>
+                    <a href="../HTML/Ranks.html">Ranks</a>
+                </div>
+                <div class="nav-item">
+                    <i class="fas fa-calculator"></i>
+                    <a href="../HTML/formulario.html">Calculadora</a>
+                </div>
+                <div class="nav-item">
+                    <i class="fas fa-store"></i>
+                    <a href="../HTML/sobrenos.html">Sobre Nós</a>
+                </div>
+            </div>
+        </div>
+        <div class="navbar-right">
+            <div class="right-items">
+                <a href="../HTML/upgrade.html" class="upgrade-button">Premium</a>ㅤ
+                <a href="../HTML/login.html" class="login-button" id="login" hidden>Logar</a>ㅤ
+                <a href="../HTML/cadastro.html" class="signin-button" id="cadastro" hidden>Cadastre-se</a>
+                <div class="avatar">
+                    <i class="bi bi-person-circle icon-large" id="user-icon"></i>
+                    <ul class="dropdown-menu" id="dropdown-menu">
+                        <li><a href="configuracao.html">Configuração</a></li>
+                        <li><a href="../HTML/relatorio.html">relatar problema</a></li>
+                        <li><a href="../HTML/feedback.html">feedback</a></li>
+                        <li><button type="button" id="button" onclick="logOut()" hidden>LogOut</button></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<script>
+    const userIcon = document.getElementById('user-icon');
+    const dropdownMenu = document.getElementById('dropdown-menu');
+
+    userIcon.addEventListener('click', () => {
+        dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+    });
+
+    // Fecha o menu se o usuário clicar fora dele
+    window.addEventListener('click', (event) => {
+        if (!userIcon.contains(event.target) && !dropdownMenu.contains(event.target)) {
+            dropdownMenu.style.display = 'none';
+        }
+    });
+</script>
+<div class="container">
+    <section class="header">
+        <h2>Detalhes das Emissões</h2>
+      </section>
+    
+
+    <div id="resultados" class="result"></div>
+
+    <div class="top-contribuicoes">
+        <h3>Atividades mais impactantes:</h3>
+        <div id="top-contribuicoes-list"></div>
+    </div>
+
+    <canvas id="emissoesChart"  class="Chart"></canvas>
+<br>
+  
+</div>  
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
+</body>
+
+</html>

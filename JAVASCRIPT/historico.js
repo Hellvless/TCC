@@ -1,7 +1,8 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
-import { getAuth} from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
-import { getDatabase, set, get, update, remove, push, ref, child} from "https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js";
+import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
+import { getDatabase, get, ref } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js";
 
+// Configuração do Firebase
 const firebaseConfig = {
     apiKey: "AIzaSyCEh1zVhU1AG4tcV3yQMXQlGmNG9hWho1E",
     authDomain: "tcc---ecoprint.firebaseapp.com",
@@ -10,69 +11,92 @@ const firebaseConfig = {
     messagingSenderId: "387347125569",
     appId: "1:387347125569:web:a994b4d23b5b1feaeefdc0",
     measurementId: "G-84J579LFKS"
-  };
-  const app = initializeApp(firebaseConfig);
-  const auth = getAuth();
-  const db = getDatabase();
-  console.log("Auth:", auth); // Verifique se `auth` está inicializado corretamente
+};
 
-  function carregarEmissoes() {
-    // Verifica se o usuário está autenticado
-    const user = auth.currentUser;
+// Inicializando o Firebase
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app); // Autenticação
+const db = getDatabase(app); // Banco de dados
+
+console.log("Auth:", auth); // Verifique se `auth` está inicializado corretamente
+
+// Função para carregar as emissões do Firebase
+function carregarEmissoes() {
+    const user = auth.currentUser; // Obtém o usuário autenticado
     if (user) {
         const uid = user.uid;
-        const ref = ref(db, 'user/' + uid + '/emissoes' );
+        const emissaoRef = ref(db, 'user/' + uid + '/emissoes');
 
-        ref.once('value', (snapshot) => {
+        // Recupera os dados do Firebase
+        get(emissaoRef).then((snapshot) => {
             const dados = snapshot.val();
             const container = document.getElementById('container');
 
-            // Limpar o container antes de adicionar as novas divs
+            // Limpa o container antes de adicionar as novas divs
             container.innerHTML = '';
 
-            // Verifica se há emissões e as cria
+            // Verifica se há emissões e cria as divs
             if (dados) {
                 Object.keys(dados).forEach((key) => {
-                    // Pega a data da emissão, que agora está dentro da chave "data"
-                    const dataEmissao = dados[key].data;
+                 const dataEmissao = dados[key].Data;  // A data da emissão
 
-                    // Criar uma div para cada emissão
-                    const itemDiv = document.createElement('div');
-                    itemDiv.classList.add('item');
-                    itemDiv.textContent = formatarData(dataEmissao); // Exibe a data formatada
-                    container.appendChild(itemDiv);
+                    // Adiciona um console.log para verificar o valor de `data`
+                    console.log("Data de emissão:", dataEmissao);
+                    
+
+                    // Verifica se a data existe
+                    if (dataEmissao) {
+                        const divEmissao = document.createElement('div');
+                        divEmissao.classList.add('emissao');
+
+                        // Cria um botão/link para cada data
+                        const botao = document.createElement('button');
+                        botao.classList.add('data-button');
+                        botao.textContent = dataEmissao; // Texto do botão é a data
+
+                        botao.onclick = () => {
+                            console.log(`Link gerado para a Data: ${dataEmissao})`);
+                            window.location.href = `resultadohistorico.html?Data=${dataEmissao}`;
+                
+                        };
+
+                        const textoAcessar = document.createElement('div');
+                        textoAcessar.classList.add('acessar-texto');
+                        textoAcessar.textContent = "Acessar";
+
+                        divEmissao.appendChild(botao);
+                        divEmissao.appendChild(textoAcessar);
+
+                        // Adiciona a div de emissão ao container
+                        container.appendChild(divEmissao);
+                      
+
+                        // Cria a div que exibirá o texto "Acessar"
+                    } else {
+                        const itemDiv = document.createElement('div');
+                        itemDiv.classList.add('item');
+                        itemDiv.textContent = 'Data inválida'; // Exibe uma mensagem de erro
+                        container.appendChild(itemDiv);
+                    }
                 });
             } else {
                 const mensagem = document.createElement('div');
                 mensagem.textContent = 'Nenhuma emissão encontrada.';
                 container.appendChild(mensagem);
             }
+        }).catch((error) => {
+            console.error("Erro ao carregar os dados:", error);
         });
     } else {
         alert("Usuário não autenticado.");
     }
 }
 
-// Função para formatar a data no formato "dia-mês-ano"
-function formatarData(data) {
-    // Verifica se a data está no formato "dia-mês-ano"
-    const partesData = data.split('-');
-    if (partesData.length === 3) {
-        const dia = partesData[0];
-        const mes = partesData[1];
-        const ano = partesData[2];
-        return `${dia}/${mes}/${ano}`; // Formato desejado
+// Certifique-se de que a função só é chamada após a autenticação
+onAuthStateChanged(auth, (user) => {
+    if (user) {
+        carregarEmissoes(); // Chama a função apenas quando o usuário estiver autenticado
+    } else {
+        alert("Usuário não autenticado.");
     }
-    return data; // Caso não esteja no formato esperado, retorna como está
-}
-
-// Chama a função de carregar as emissões ao carregar a página
-window.onload = () => {
-    auth.onAuthStateChanged(user => {
-        if (user) {
-            carregarEmissoes();
-        } else {
-            alert("Usuário não autenticado.");
-        }
-    });
-}
+});

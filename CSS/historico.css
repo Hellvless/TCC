@@ -1,0 +1,54 @@
+.emissao {
+    position: relative; /* Permite o posicionamento absoluto dentro */
+    width: 200px;
+    height: 150px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden; /* Garante que os elementos dentro da div não saiam da borda */
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: transform 0.3s ease; /* Transição suave ao passar o mouse */
+}
+
+.emissao:hover {
+    transform: translateY(-10px); /* Eleva a caixa ao passar o mouse */
+}
+
+.data-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Transição suave para o fundo do botão */
+}
+
+.data-button:hover {
+    background-color: #0056b3; /* Cor do fundo ao passar o mouse no botão */
+}
+
+.acessar-texto {
+    display: none; /* Começa invisível */
+    position: absolute;
+    bottom: 10px;
+    font-size: 14px;
+    color: #333;
+    transition: transform 0.3s ease; /* Transição para a subida do texto */
+}
+
+.emissao:hover .acessar-texto {
+    display: block; /* Mostra o texto ao passar o mouse na caixa */
+    font-weight: bold;
+    transform: translateY(-10px); /* Move o texto para cima ao passar o mouse */
+}
+#container {
+    width: 80%;
+    height: 80vh;
+    display: flex;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.212);
+}
