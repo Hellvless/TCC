@@ -229,42 +229,76 @@ body {
     transition: transform 0.3s ease; /* Transição suave ao passar o mouse */
 }
 
+.emissao {
+  position: relative;
+  width: 100%;
+  height: 150px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+
 .emissao:hover {
-    transform: translateY(-10px); /* Eleva a caixa ao passar o mouse */
+  transform: translateY(-10px);
 }
 
 .data-button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease; /* Transição suave para o fundo do botão */
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-bottom: 20px;
 }
 
 .data-button:hover {
-    background-color: #0056b3; /* Cor do fundo ao passar o mouse no botão */
+  background-color: #0056b3;
 }
 
 .acessar-texto {
-    display: none; /* Começa invisível */
-    position: absolute;
-    bottom: 10px;
-    font-size: 14px;
-    color: #000000;
-    transition: transform 0.3s ease; /* Transição para a subida do texto */
+  display: none; /* Começa invisível */
+  /* position: absolute; */
+  bottom: 30px; /* Distância do botão de "Acessar" */
+  font-size: 14px;
+  color: #000000;
+  transition: transform 0.3s ease;
+  margin-bottom: 10px;
+  margin-top: 5px;
+}
+
+.remover-button {
+  display: none; /* Começa invisível */
+  background-color: #ff5733;
+  color: white;
+  border: none;
+  padding: 8px;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+
+}
+
+.remover-button:hover {
+  background-color: #c70039;
 }
 
 .emissao:hover .acessar-texto {
-    display: block; /* Mostra o texto ao passar o mouse na caixa */
-    font-weight: bold;
-    transform: translateY(-10px); /* Move o texto para cima ao passar o mouse */
+  display: block;
+  font-weight: bold;
+  transform: translateY(-10px);
 }
-#container {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.212);
+
+.emissao:hover .remover-button {
+  display: block; /* Exibe o botão de remover ao passar o mouse */
 }

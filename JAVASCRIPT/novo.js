@@ -26,6 +26,7 @@ const db = getDatabase();
 const logoutButton = document.getElementById("button");
 const loginButton = document.getElementById("login");
 const cadastroButton = document.getElementById("cadastro");
+const historicButton = document.getElementById("historico");
 
 console.log("Auth:", auth); // Verifique se `auth` está inicializado corretamente
 console.log("Database:", db); // Verifique se `database` está inicializado corretamente
@@ -52,6 +53,7 @@ function monitorAuthState() {
       logoutButton.style.display = "block"
       loginButton.style.display = "none"
       cadastroButton.style.display = "none"
+      historicButton.style.display = "block"
       console.log("Usuário autenticado:", user.email);
     
       } else {
@@ -59,6 +61,7 @@ function monitorAuthState() {
       logoutButton.style.display = "none"
       loginButton.style.display = "block"
       cadastroButton.style.display = "block"
+      historicButton.style.display = "none"
       console.log("Usuário não autenticado");
       // window.location.href = "novo.html";
     }
