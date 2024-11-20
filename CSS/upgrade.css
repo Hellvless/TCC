@@ -246,17 +246,23 @@ cursor: pointer;
     font-size: 1.8rem;
     margin-bottom: 10px;
     color: white;
+    background: linear-gradient(50deg, #ffd92e, #f74141); 
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent;
 }
 .plan h3{
     font-size: 1.8rem;
     margin-bottom: 10px;
-    background: linear-gradient(to right,white, rgb(239, 221, 21));
+    background: linear-gradient(90deg,  #ffffff,#ffd900); 
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent;
+
 }
 
 .plan .price {
     font-size: 2.5rem;
     font-weight: bold;
-    color: #6b46c1;
+    color: #ffffff;
 }
 
 .plan .price span {
@@ -297,8 +303,8 @@ cursor: pointer;
 }
 
 .plan a {
-    background-color: #6b46c1;
-    color: #fff;
+    background-color: #ffffff;
+    color: #000000;
     padding: 10px 20px;
     text-decoration: none;
     border: none;
@@ -309,7 +315,7 @@ cursor: pointer;
 }
 
 .plan a:hover {
-    background-color: #553c9a;
+    background-color: #ffffff;
 }
 
 /* Step 3 Title */
