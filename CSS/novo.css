@@ -38,6 +38,12 @@ body {
 .logo img {
   margin-left: 10px; /* Espaço entre o texto e o ícone */
   height: 24px; /* Ajuste o tamanho do ícone conforme necessário */
+  max-width: 100px; /* Limita a largura máxima da imagem */
+  max-height: 45px; /* Limita a altura máxima da imagem */
+  width: auto; /* Ajusta a largura automaticamente */
+  height: auto; /* Ajusta a altura automaticamente */
+  opacity: 0; /* Inicialmente invisível */
+  transition: opacity 0.3s ease 0.3s; /* Aparece após a linha expandir */
 }
 
 .logo::after {
@@ -54,12 +60,11 @@ body {
 .logo:hover::after {
   width: 100%; /* Linha se expande em hover */
 }
-.logo img {
-  max-width: 100px;  /* Limita a largura máxima da imagem */
-  max-height: 40px;  /* Limita a altura máxima da imagem */
-  width: auto;  /* Ajusta a largura automaticamente */
-  height: auto;  /* Ajusta a altura automaticamente */
+
+.logo:hover img {
+  opacity: 1; /* Imagem aparece ao final da linha */
 }
+
 
 .nav-items {
     display: flex;
@@ -630,8 +635,3 @@ h2 {
 .app-links img:hover, .social-links img:hover {
   transform: scale(1.1); /* Efeito de zoom no hover */
 }
-
-
-
-
-

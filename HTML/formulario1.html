@@ -108,17 +108,39 @@
     </div>
 
     <div class="form-content">
-      <label for="transporte-publico">Quantas vezes você consome carne (bovina, suína, ou de frango)?
-      </label>
-      <select id="consumo-carne" name="consumo-carne" required>
-        <option value="" disabled selected>Selecione uma opçãoㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ</option>
-        <option value="varias-vezes-ao-dia"> Mais de uma vez por dia (Impacto muito alto,especialmente para carne bovina)</option>
-        <option value="uma-ou-duas-vezes"> 4-6 vezes por semana (Impacto moderado)</option>
-        <option value="tres-a-cinco">1-3 vezes por semana (Impacto médio)</option>
-        <option value="mensalmente"> Raramente (Impacto reduzido)</option>
-        <option value="raramente"> Nunca (Impacto muito reduzido)</option>
-      </select>
-  
+      <label for="consumo-carne">Quantas vezes você consome carne (bovina, suína, ou de frango)?</label>
+      
+      <div class="input-container">
+        <select id="consumo-carne" name="consumo-carne" required>
+          <option value="" disabled selected>
+            Selecione uma opção
+          </option>
+          <option value="varias-vezes-ao-dia">
+            Mais de uma vez por dia (Impacto muito alto, especialmente para carne bovina)
+          </option>
+          <option value="uma-ou-duas-vezes">
+            4-6 vezes por semana (Impacto moderado)
+          </option>
+          <option value="tres-a-cinco">
+            1-3 vezes por semana (Impacto médio)
+          </option>
+          <option value="mensalmente">
+            Raramente (Impacto reduzido)
+          </option>
+          <option value="raramente">
+            Nunca (Impacto muito reduzido)
+          </option>
+        </select>
+        <span class="tooltip-icon">?</span>
+        <div class="tooltip-text">
+          <strong>Impactos do consumo de carne:</strong><br><br>
+          <ul>
+            <li><strong>Carne bovina:</strong> maior impacto ambiental devido às emissões de metano e uso intensivo de água.</li>
+            <li><strong>Carne de frango:</strong> impacto moderado em comparação à carne bovina.</li>
+            <li><strong>Alternativas:</strong> substituir por vegetais e leguminosas pode reduzir emissões de carbono.</li>
+          </ul>
+        </div>
+      </div>
     </div>
 
 
@@ -139,14 +161,19 @@
     <!-- Consumo de água -->
     <div class="form-content">
       <label for="consumo-agua">Qual é o seu consumo médio de água por mês (em metros cúbicos)?</label>
-      <input
-        type="number"
-        id="consumo-agua"
-        min="0"
-        name="consumo-agua"
-        placeholder="Digite o consumo em m³"
-        required
-      />
+      
+      <div class="input-container">
+        <input type="number" min="0" id="consumo-agua" name="consumo-agua" placeholder="Digite o consumo em m³" required />
+        <span class="tooltip-icon">?</span>
+        <div class="tooltip-text"> <strong>Exemplos de consumo mensal de energia:</strong><br><br>
+          <ul>
+            <li><strong>Ar-condicionado:</strong> 150-300 kWh/mês (dependendo do modelo e tempo de uso diário)</li>
+            <li><strong>Máquina de lavar:</strong> 30-60 kWh/mês (considerando 3 a 5 lavagens semanais)</li>
+            <li><strong>Geladeira:</strong> 40-70 kWh/mês (dependendo do modelo e da eficiência energética)</li>
+          </ul>
+          Esses valores são estimativas baseadas no uso médio mensal.</div>
+      </div>
+
     
     </div>
     <button type="button" onclick="nextPage1()">continuar</button>
