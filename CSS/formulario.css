@@ -15,6 +15,7 @@ body {
 
 body .container {
   margin-left: 30%;
+  
 }
 
 .navbar {
@@ -333,27 +334,37 @@ body .container {
   font-size: 20px;
   cursor: pointer;
   z-index: 2;
+   /* Aumenta a altura da área sensível para 50px */
 }
 
 .tooltip-text {
   visibility: hidden;
-  width: 220px;
+  width: 300px;
   background-color: #333;
   color: #fff;
-  text-align: center;
+  text-align: left;
   border-radius: 5px;
   padding: 5px;
   position: absolute;
-  top: -45px;
-  right: -10%;
+  top: -60px;
+  right: 0;
   margin-left: -110px;
   opacity: 0;
   transition: opacity 0.3s ease, visibility 0s 0.3s;
-  z-index: 9999; /* Garantir que a tooltip esteja acima de outros elementos */
+  z-index: 2; /* Garantir que a tooltip esteja no topo de outros elementos */
+  font-size: 14px;
+  line-height: 1.5;
+  
 }
 
 .tooltip-icon:hover + .tooltip-text {
   visibility: visible;
   opacity: 1;
   transition: opacity 0.3s ease;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none; /* Remove as setas do Chrome, Safari e Opera */
+  margin: 0;
 }
