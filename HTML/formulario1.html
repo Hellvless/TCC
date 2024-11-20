@@ -139,14 +139,19 @@
     <!-- Consumo de água -->
     <div class="form-content">
       <label for="consumo-agua">Qual é o seu consumo médio de água por mês (em metros cúbicos)?</label>
-      <input
-        type="number"
-        id="consumo-agua"
-        min="0"
-        name="consumo-agua"
-        placeholder="Digite o consumo em m³"
-        required
-      />
+      
+      <div class="input-container">
+        <input type="number" min="0" id="consumo-agua" name="consumo-agua" placeholder="Digite o consumo em m³" required />
+        <span class="tooltip-icon">?</span>
+        <div class="tooltip-text"> <strong>Exemplos de consumo mensal de energia:</strong><br><br>
+          <ul>
+            <li><strong>Ar-condicionado:</strong> 150-300 kWh/mês (dependendo do modelo e tempo de uso diário)</li>
+            <li><strong>Máquina de lavar:</strong> 30-60 kWh/mês (considerando 3 a 5 lavagens semanais)</li>
+            <li><strong>Geladeira:</strong> 40-70 kWh/mês (dependendo do modelo e da eficiência energética)</li>
+          </ul>
+          Esses valores são estimativas baseadas no uso médio mensal.</div>
+      </div>
+
     
     </div>
     <button type="button" onclick="nextPage1()">continuar</button>

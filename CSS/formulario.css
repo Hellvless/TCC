@@ -332,8 +332,9 @@ body .container {
   top: 50%;
   transform: translateY(-50%);
   font-size: 20px;
+  padding: 20px; /* Aumenta a área clicável */
   cursor: pointer;
-  z-index: 2;
+  z-index: 30;
    /* Aumenta a altura da área sensível para 50px */
 }
 
