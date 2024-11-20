@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const { latitude, longitude } = position.coords;
             await fetchCityWeatherFromCoords(latitude, longitude);
         }, () => {
-            showAlert('');//Não foi possível obter sua localização. essa prr tava ak juca :)
+            showAlert('');//Não foi possível obter sua localização. essa prr tava ak juca :)aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
         });
     } else {
         showAlert('Geolocalização não é suportada pelo seu navegador.');
