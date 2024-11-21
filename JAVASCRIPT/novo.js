@@ -27,6 +27,7 @@ const logoutButton = document.getElementById("button");
 const loginButton = document.getElementById("login");
 const cadastroButton = document.getElementById("cadastro");
 const historicButton = document.getElementById("historico");
+const avatarButton = document.getElementById("user-icon");
 
 console.log("Auth:", auth); // Verifique se `auth` está inicializado corretamente
 console.log("Database:", db); // Verifique se `database` está inicializado corretamente
@@ -44,29 +45,26 @@ function checkInitialLoginStatus() {
 
 document.addEventListener("DOMContentLoaded", checkInitialLoginStatus);
 
-function monitorAuthState() {
+document.addEventListener('DOMContentLoaded', function monitorAuthState() {
   console.log("Verificando estado de autenticação");
  
     onAuthStateChanged(auth, (user) => {
       // Usuário está logado - exibe o botão de logout
        if (user) {
-      logoutButton.style.display = "block"
-      loginButton.style.display = "none"
-      cadastroButton.style.display = "none"
-      historicButton.style.display = "block"
+      logoutButton.style.display = "block";
+      loginButton.style.display = "none";
+      cadastroButton.style.display = "none";
+      historicButton.style.display = "block";
       console.log("Usuário autenticado:", user.email);
     
       } else {
       // Redireciona para a página de login se o usuário não estiver autenticado
-      logoutButton.style.display = "none"
-      loginButton.style.display = "block"
-      cadastroButton.style.display = "block"
-      historicButton.style.display = "none"
+      avatarButton.style.display = "none";
       console.log("Usuário não autenticado");
       // window.location.href = "novo.html";
     }
   });
-}
+});
 monitorAuthState();
 
 

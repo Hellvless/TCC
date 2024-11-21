@@ -348,19 +348,15 @@ cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center; /* Centraliza horizontalmente */
-    height: 65vh; /* Opcional: centraliza verticalmente em toda a altura da tela */
+    height: 100%;
+    padding: 10% 0 10% 0;
   }
   
   .videocalculadora video {
     height: 500px;
     width: 900px;
-    transition: transform 0.5s ease; /* Suaviza o efeito */
   }
-  
-  .videocalculadora video:hover {
-    transform: scaleX(1.2); /* Aumenta o tamanho do vídeo apenas na largura ao passar o mouse */
-  }
-
+    
 
 
 
