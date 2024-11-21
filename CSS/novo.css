@@ -348,7 +348,7 @@ cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center; /* Centraliza horizontalmente */
-    height: 90vh; /* Opcional: centraliza verticalmente em toda a altura da tela */
+    height: 65vh; /* Opcional: centraliza verticalmente em toda a altura da tela */
   }
   
   .videocalculadora video {
@@ -358,7 +358,7 @@ cursor: pointer;
   }
   
   .videocalculadora video:hover {
-    transform: scaleX(1.5); /* Aumenta o tamanho do vídeo apenas na largura ao passar o mouse */
+    transform: scaleX(1.2); /* Aumenta o tamanho do vídeo apenas na largura ao passar o mouse */
   }
 
 
