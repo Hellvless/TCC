@@ -601,20 +601,20 @@ h2 {
   padding: 4px 8px;
 }
 .fimtxt a:hover {
-  color: #8ba96e; /* Nova cor do texto ao passar o mouse */
+  color: #8ba96e;
 }
 .store-and-social-links {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px; /* Espaçamento entre as linhas */
+  gap: 0px; /* Remove o espaçamento vertical */
 }
 
 .app-links, .social-links {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px; /* Espaçamento entre os botões */
+  gap: 10px; /* Espaçamento horizontal entre os itens dentro de cada bloco */
 }
 
 .app-links img, .social-links img {
@@ -625,7 +625,9 @@ h2 {
 }
 
 .social-links img {
-  width: 80px; /* Tamanho reduzido para os ícones sociais */
+  width: 40px; /* Tamanho reduzido para os ícones sociais */
+  height: 50px;
+  margin: 0; /* Remove margens adicionais */
 }
 
 .app-links img:hover, .social-links img:hover {
