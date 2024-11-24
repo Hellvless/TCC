@@ -107,12 +107,15 @@ window.nextPage2 = nextPage2;
 
 
         // Constantes para emissões médias
-        const EMISSAO_KWH = 0.27; // kg CO₂ por KWh (emissão média de eletricidade)
-        const EMISSAO_ROUPAS = 4.5; // kg CO₂ por peça de roupa
-        const EMISSAO_CARRO_GASOLINA = 0.23; // kg CO₂ por km (Carro Gasolina/Etanol)
-        const EMISSAO_CARRO_DIESEL = 0.27; // kg CO₂ por km (Carro Diesel)
-        const EMISSAO_CARRO_ELETRICO = 0.06; // kg CO₂ por km (Carro Elétrico)
+        const EMISSAO_KWH = 0.1; // kg CO₂ por KWh (emissão média de eletricidade)
+        const EMISSAO_AGUA = 1.5;
+        const EMISSAO_ROUPAS = 0.42; // kg CO₂ por peça de roupa
+        const EMISSAO_CARRO_GASOLINA = 2.3; // kg CO₂ por km (Carro Gasolina/Etanol)
+        const EMISSAO_CARRO_DIESEL = 1.6; // kg CO₂ por km (Carro Diesel)
+        const EMISSAO_CARRO_ELETRICO = 0.1; // kg CO₂ por km (Carro Elétrico)
         const EMISSAO_MOTO = 0.16; // kg CO₂ por km (Moto)
+        const EMISSAO_MOTO_DIESEL = 1.1; // kg CO₂ por km (Moto)
+
 
         const EMISSAO_TRANSPORTE_PUBLICO = {
           'varias-vezes-ao-dia': 0.1,
@@ -145,13 +148,6 @@ window.nextPage2 = nextPage2;
         };
         
         // Emissões de consumo de água (kg CO₂ por quantidade de água consumida)
-        const EMISSAO_AGUA = {
-          '<10': 3.0,
-          '10-20': 6.0,
-          '21-50': 10.0,
-          '>50': 15.0,
-          'default': 0
-        };
 
          // Novas constantes para as questões adicionais
         const EMISSAO_ALIMENTO_ORGANICO = {
@@ -175,6 +171,8 @@ window.nextPage2 = nextPage2;
     
         // Emissões para o consumo de KWh
         let emissaoKwh = kwh * EMISSAO_KWH;
+
+        let emissaoAgua = aguaResposta * EMISSAO_AGUA;
     
         // Emissões por compras de roupas (considerando o número de compras por ano e peças compradas)
         let emissaoRoupas = roupasAno * pecasMedia * EMISSAO_ROUPAS;
@@ -195,12 +193,17 @@ window.nextPage2 = nextPage2;
             case 'moto':
                 emissaoVeiculo = 0.1 * 30 * EMISSAO_MOTO;
                 break;
+                case 'moto/diesel':
+                emissaoVeiculo = 0.1 * 30 * EMISSAO_MOTO_DIESEL;
+                break;
+                case 'nao-motorizado':
+                emissaoVeiculo = 0;
+                break;
         }
 
         let emissaoTransportePublico = 0;
         let emissaoCarne = 0;
         let emissaoVoos = 0;
-        let emissaoAgua = 0;
         let emissaoAlimentoOrganico = 0;
         let emissaoRecicla = 0;
       
@@ -272,25 +275,7 @@ window.nextPage2 = nextPage2;
             emissaoVoos = 0;
             break;
         }
-      
-        // Calcular as emissões para consumo de água
-        switch (true) {
-          case (aguaResposta < 10):
-            emissaoAgua = 3.0;
-            break;
-          case (aguaResposta >= 10 && aguaResposta <= 20):
-            emissaoAgua = 6.0;
-            break;
-          case (aguaResposta >= 21 && aguaResposta <= 50):
-            emissaoAgua = 10.0;
-            break;
-          case (aguaResposta > 50):
-            emissaoAgua = 15.0;
-            break;
-          default:
-            emissaoAgua = 0;
-            break;
-        }
+    
 
         switch (alimentoOrganicoResposta) {
           case "varias-vezes-ao-dia":
@@ -348,7 +333,7 @@ window.nextPage2 = nextPage2;
 
         // Cálculo total das emissões mensais;
 
-        let totalEmissoes = emissaoKwh + emissaoRoupas + emissaoVeiculo + emissaoTransportePublico + emissaoCarne + emissaoVoos + emissaoAgua + emissaoAlimentoOrganico + emissaoRecicla;
+        let totalEmissoes = emissaoKwh + emissaoRoupas + emissaoVeiculo + emissaoTransportePublico + emissaoCarne + emissaoVoos + emissaoAgua + emissaoAlimentoOrganico - emissaoRecicla;
 
     // Exibir o resultado
     let resultadosHTML = `<h2>Total de Emissões de CO₂: ${totalEmissoes.toFixed(2)} kg CO₂/Mês</h2>`;

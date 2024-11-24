@@ -56,11 +56,12 @@ document.addEventListener('DOMContentLoaded', function monitorAuthState() {
       cadastroButton.style.display = "none";
       historicButton.style.display = "block";
       console.log("Usuário autenticado:", user.email);
-    
+      logoutButton.addEventListener('click', logOut);
       } else {
       // Redireciona para a página de login se o usuário não estiver autenticado
       avatarButton.style.display = "none";
       console.log("Usuário não autenticado");
+      
       // window.location.href = "novo.html";
     }
   });
