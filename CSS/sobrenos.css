@@ -242,11 +242,11 @@ margin-bottom: 100px;
 }
 
 .imgobj img{
-  margin-left: 400px;
+  margin-left: 350px;
 }
 .imgobj h1{
   font-size: 50px;
-  margin-left: 350px;
+  margin-left: 330px;
 }
 .imgobj p{
   text-align: justify;
@@ -257,12 +257,12 @@ margin-bottom: 100px;
 .imgobj1 img{
   width: 200px;  /* Define a largura da imagem */
   height: 200px; /* Define a altura da imagem */
-  margin-left: 400px;
+  margin-left: 350px;
  
 }
 .imgobj1 h1{
   font-size: 50px;
-  margin-left: 400px;
+  margin-left: 370px;
  
 }
 .imgobj1 p{

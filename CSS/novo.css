@@ -348,7 +348,7 @@ cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center; /* Centraliza horizontalmente */
-    height: 100%;
+    height: 530px;
     padding: 10% 0 10% 0;
   }
   
