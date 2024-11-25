@@ -11,7 +11,7 @@ body {
     padding: 0;
     justify-content: center;
     align-items: flex;
-    background-color:#eff2e4 ;
+    background-color:#000000 ;
 }
 
 .navbar {
@@ -359,7 +359,27 @@ cursor: pointer;
     
 
 
+.hr{
+  width: 90%;       /* Define a largura da linha */
+  margin: 0 auto;   /* Centraliza horizontalmente */
+  border: 1px solid black; /* Linha personalizada (opcional) */
+  height: 6px;
+  background-color: white;
+  border-radius: 10px;
+  margin-top: 7%;
+  margin-bottom: 7%;
+}
 
+.hr1{
+  width: 90%;       /* Define a largura da linha */
+  margin: 0 auto;   /* Centraliza horizontalmente */
+  border: 1px solid black; /* Linha personalizada (opcional) */
+  height: 6px;
+  background-color: white;
+  border-radius: 10px;
+  margin-top: 10%;
+
+}
 
 
 
