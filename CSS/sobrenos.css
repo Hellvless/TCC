@@ -225,55 +225,71 @@ cursor: pointer;
   justify-content: center;
 }
 
-
 .tdtxt{
   text-align: justify;
-  margin-bottom: 60px;
-  padding: 20px 500px;
- font-size: 16px;
- font-family: Arial;
+  padding: 20px 100px;
+  font-size: 16px;
+  font-family: Arial;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.tdtxt ul, .tdtxt ol {
+  display: flex;  /* Aplica o layout flexível */
+  flex-wrap: wrap;  /* Permite que os itens se quebrem em várias linhas, se necessário */
+  padding-left: 20px;
+}
+
+.tdtxt li {
+  flex: 1 1 30%; /* Define o tamanho e o comportamento dos itens da lista */
+  margin-bottom: 10px; /* Adiciona espaçamento entre os itens */
 }
 
 
 .objtxt{
   display: flex;
- justify-content: space-between; /* Aplica o espaçamento entre os itens */
-margin-bottom: 100px;
+  justify-content: center; /* Alinha os itens no centro */
+  margin-bottom: 100px;
 }
 
 .imgobj img{
-  margin-left: 350px;
+  margin-left: 350px; /* Mantido como estava */
 }
+
 .imgobj h1{
   font-size: 50px;
-  margin-left: 330px;
+  margin-left: 330px; /* Mantido como estava */
 }
+
 .imgobj p{
   text-align: justify;
-  margin: 0px 200px;
-
+  width: 80%; /* Ajustando o texto para ficar mais centralizado */
+  margin: 0 auto; /* Centralizando o parágrafo */
 }
 
 .imgobj1 img{
   width: 200px;  /* Define a largura da imagem */
   height: 200px; /* Define a altura da imagem */
-  margin-left: 350px;
- 
+  margin-left: 350px; /* Mantido como estava */
 }
+
 .imgobj1 h1{
   font-size: 50px;
-  margin-left: 370px;
- 
+  margin-left: 370px; /* Mantido como estava */
 }
+
 .imgobj1 p{
   text-align: justify;
-  margin: 0px 200px;
+  width: 80%; /* Ajustando o texto para ficar mais centralizado */
+  margin: 0 auto; /* Centralizando o parágrafo */
 }
+
 .parcerias{
-  display: flex ;
+  display: flex;
   align-items: center;
   justify-content: center;
 }
+
 .parcerias h1{
   font-size: 70px;
 }
