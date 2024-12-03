@@ -3,6 +3,10 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Arial;
+    text-decoration: none; 
+    color: inherit; 
+    
+
 }
 
 body {
@@ -12,6 +16,7 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
+   
 }
 
 #fundo {
@@ -20,6 +25,7 @@ body {
     align-items: center;
     width: 100%;
     height: 100vh;
+    cursor: pointer;
 }
 
 .content-box {
@@ -29,6 +35,7 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     max-width: 400px;
     width: 100%;
+    cursor: pointer;
 }
 
 .form-box h2 {
@@ -88,8 +95,11 @@ body {
     font-size: 16px;
     width: 100%;
     margin-top: 20px;
+    display: block;
 }
 
 .button button:hover {
     background-color: #333;
+
+   
 }
